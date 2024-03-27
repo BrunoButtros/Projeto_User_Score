@@ -1,4 +1,4 @@
-package entity;
+package com.github.brunobuttros.userscore.entity;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,6 +21,7 @@ public class EnderecoEntity {
         private String cidade;
         private String estado;
         private String cep;
+        private String numero;
 
         @ManyToOne
         private UsuarioEntity usuario;

@@ -1,4 +1,4 @@
-package dot;
+package com.github.brunobuttros.userscore.dot;
 
-public class EnderecoDTO {
+public record EnderecoDTO(Long id, String rua, String cidade, String estado, String cep, String numero) {
 }
