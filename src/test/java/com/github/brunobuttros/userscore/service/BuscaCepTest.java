@@ -18,8 +18,8 @@ public class BuscaCepTest {
 
         // Mock da classe "BuscaCep"
         BuscaCep buscaCepMock = mock(BuscaCep.class);
-        when(buscaCepMock.getEnderecoEntity(cep)).thenReturn(new EnderecoEntity("170014270",
-                "Não sei", "Bauru", "SP"));
+        when(buscaCepMock.getEnderecoEntity(cep)).thenReturn(new EnderecoEntity("170014270", "Logradouro",
+                "Bairro", "Localidade", "UF"));
 
         // Execução do método que retorna EnderecoEntity
         EnderecoEntity enderecoEntity = buscaCepMock.getEnderecoEntity(cep);
@@ -27,8 +27,10 @@ public class BuscaCepTest {
         // Asserts
         assertNotNull(enderecoEntity);
         assertEquals("170014270", enderecoEntity.getCep());
-        assertEquals("Não sei", enderecoEntity.getBairro());
-        assertEquals("Bauru", enderecoEntity.getLocalidade());
-        assertEquals("SP", enderecoEntity.getUf());
+        assertEquals("Logradouro", enderecoEntity.getLogradouro());
+        assertEquals("Bairro", enderecoEntity.getBairro());
+        assertEquals("Localidade", enderecoEntity.getLocalidade());
+        assertEquals("UF", enderecoEntity.getUf());
     }
+
 }

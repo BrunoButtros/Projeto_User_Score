@@ -24,6 +24,7 @@ public class BuscaCepController {
         EnderecoEntity enderecoEntity = buscaCep.getEnderecoEntity(cep);
         return new EnderecoDTO(enderecoEntity.getId(),
                 enderecoEntity.getCep(),
+                enderecoEntity.getLogradouro(),
                 enderecoEntity.getBairro(),
                 enderecoEntity.getLocalidade(),
                 enderecoEntity.getUf());

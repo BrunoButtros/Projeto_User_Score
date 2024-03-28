@@ -19,6 +19,7 @@ public class EnderecoEntity {
         private Long id;
 
         private String cep;
+        private String logradouro;
         private String bairro;
         private String localidade;
         private String uf;
@@ -26,8 +27,9 @@ public class EnderecoEntity {
         @ManyToOne
         private UsuarioEntity usuario;
 
-     public EnderecoEntity(String cep, String bairro, String localidade, String uf) {
+     public EnderecoEntity(String cep, String logradouro, String bairro, String localidade, String uf) {
                 this.cep = cep;
+                this.logradouro = logradouro;
                 this.bairro = bairro;
                 this.localidade = localidade;
                 this.uf = uf;
@@ -37,10 +39,10 @@ public class EnderecoEntity {
         @Override
         public String toString() {
                 return "EnderecoEntity{ cep = " + cep +
+                        ", logradouro = " + logradouro +
                         ", bairro = " + bairro +
                         ", localidade = " + localidade +
                         ", uf = " + uf +
-                        ", usuario = " + usuario +
                         '}';
         }
 
