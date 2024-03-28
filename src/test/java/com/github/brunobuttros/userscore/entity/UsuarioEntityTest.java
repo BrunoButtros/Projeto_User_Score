@@ -14,7 +14,7 @@ public class UsuarioEntityTest {
         usuario.setNome("Jackson");
         usuario.setEmail("Jackson@exemplo.com");
         usuario.setTelefone("123456");
-        usuario.setCpfOuRg("12345");
+        usuario.setCpf("12345");
         usuario.setScore(100);
 
         //Testar os getters para verificar se os valores foram atribuidos corretamente
@@ -22,7 +22,7 @@ public class UsuarioEntityTest {
         assertEquals("Jackson", usuario.getNome());
         assertEquals("Jackson@exemplo.com", usuario.getEmail());
         assertEquals("123456", usuario.getTelefone());
-        assertEquals("12345", usuario.getCpfOuRg());
+        assertEquals("12345", usuario.getCpf());
         assertEquals(100, usuario.getScore());
 
     }

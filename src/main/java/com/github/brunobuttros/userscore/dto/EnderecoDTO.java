@@ -1,3 +1,4 @@
 package com.github.brunobuttros.userscore.dto;
-public record EnderecoDTO(String cep, String bairro, String localidade, String uf) {
+public record EnderecoDTO(Long id, String cep, String bairro, String localidade, String uf) {
+
 }

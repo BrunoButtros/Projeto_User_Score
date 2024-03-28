@@ -1,20 +1,19 @@
 package com.github.brunobuttros.userscore.entity;
 
 import jakarta.persistence.*;
-
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Table(name = "users")
+@Entity(name = "UsersJPA")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@EqualsAndHashCode(of = "id")
+
 public class UsuarioEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -22,7 +21,7 @@ public class UsuarioEntity {
     private String nome;
     private String email;
     private String telefone;
-    private String cpfOuRg;
+    private String cpf;
     private int score;
 
     @OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
