@@ -49,6 +49,53 @@ public class UsuarioService {
         }
         usuario.setEnderecos(enderecos);
         return usuarioRepository.save(usuario);
+    }
 
+
+    public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
+        // Busca o usuário pelo ID e, se não existir, lança uma exceção
+        UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado"));
+
+        // Atualiza email e telefone
+        usuarioExistente.setEmail(usuarioDTO.email());
+        usuarioExistente.setTelefone(usuarioDTO.telefone());
+
+        // Lista de novos endereços fornecidos
+        List<EnderecoDTO> novosEnderecosDTO = usuarioDTO.enderecos();
+
+        // Lista de endereços existentes do usuário
+        List<EnderecoEntity> enderecosExistente = usuarioExistente.getEnderecos();
+
+        for (EnderecoDTO enderecoDTO : novosEnderecosDTO) {
+            // Verifica se o endereço possui um ID, caso não possua, é um endereço novo
+            if (enderecoDTO.id() != null) {
+                // Se o ID do endereço estiver presente, encontra o endereço correspondente na lista existente
+                for (EnderecoEntity enderecoExistente : enderecosExistente) {
+                    // Se encontrar o endereço com o mesmo ID, atualiza os dados
+                    if (enderecoExistente.getId().equals(enderecoDTO.id())) {
+                        enderecoExistente.setCep(enderecoDTO.cep());
+                        enderecoExistente.setLogradouro(enderecoDTO.logradouro());
+                        enderecoExistente.setBairro(enderecoDTO.bairro());
+                        enderecoExistente.setLocalidade(enderecoDTO.localidade());
+                        enderecoExistente.setUf(enderecoDTO.uf());
+                        break;
+                    }
+                }
+            } else {
+                // Se o ID estiver ausente,então é um novo endereço
+                EnderecoEntity novoEndereco = new EnderecoEntity(
+                        enderecoDTO.cep(),
+                        enderecoDTO.logradouro(),
+                        enderecoDTO.bairro(),
+                        enderecoDTO.localidade(),
+                        enderecoDTO.uf()
+                );
+                enderecosExistente.add(novoEndereco);
+            }
+        }
+
+        // Salva as alterações e retorna o usuario atualizado
+        return usuarioRepository.save(usuarioExistente);
     }
 }
