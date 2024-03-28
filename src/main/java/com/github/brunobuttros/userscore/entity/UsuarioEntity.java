@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-
+@Entity
 public class UsuarioEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

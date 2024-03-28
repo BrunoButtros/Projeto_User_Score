@@ -1,4 +1,4 @@
-package com.github.brunobuttros.userscore.dot;
+package com.github.brunobuttros.userscore.dto;
 
 import java.util.List;
 
