@@ -4,6 +4,7 @@ import com.github.brunobuttros.userscore.dto.EnderecoDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
+import com.github.brunobuttros.userscore.exceptions.CepInvalidoException;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -38,9 +39,13 @@ public class UsuarioService {
 
                 EnderecoEntity endereco = buscaCep.getEnderecoEntity(cep);
                 enderecos.add(endereco);
+            } catch (CepInvalidoException e) {
+                System.err.println("CEP INVALIDO" + cep + ": " + e.getMessage());
             } catch (Exception e) {
                 System.err.println("Erro ao buscar o CEP" + cep + ": " + e.getMessage());
+
             }
+
         }
         usuario.setEnderecos(enderecos);
         return usuarioRepository.save(usuario);

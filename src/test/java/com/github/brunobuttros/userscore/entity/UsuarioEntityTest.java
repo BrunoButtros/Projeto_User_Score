@@ -17,7 +17,7 @@ public class UsuarioEntityTest {
         usuario.setCpf("12345");
         usuario.setScore(100);
 
-        //Testar os getters para verificar se os valores foram atribuidos corretamente
+        //Testando os getters para verificar se os valores foram atribuidos corretamente
         assertEquals(1L, usuario.getId().longValue());
         assertEquals("Jackson", usuario.getNome());
         assertEquals("Jackson@exemplo.com", usuario.getEmail());

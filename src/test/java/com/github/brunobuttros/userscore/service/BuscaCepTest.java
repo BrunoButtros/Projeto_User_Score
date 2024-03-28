@@ -1,6 +1,7 @@
 package com.github.brunobuttros.userscore.service;
 
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
+import com.github.brunobuttros.userscore.exceptions.CepInvalidoException;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
@@ -38,9 +39,9 @@ public class BuscaCepTest {
 
         //Mock da classe "BuscaCep"
         BuscaCep buscaCepMock = mock(BuscaCep.class);
-        when(buscaCepMock.getEnderecoEntity(cepInvalido)).thenThrow(new IllegalArgumentException("CEP inválido"));
+        when(buscaCepMock.getEnderecoEntity(cepInvalido)).thenThrow(new CepInvalidoException("CEP inválido"));
 
         //Execução do método que retorna o EnderecoEntity com CEP inválido
-        assertThrows(IllegalArgumentException.class, () -> buscaCepMock.getEnderecoEntity(cepInvalido));
+        assertThrows(CepInvalidoException.class, () -> buscaCepMock.getEnderecoEntity(cepInvalido));
     }
 }
