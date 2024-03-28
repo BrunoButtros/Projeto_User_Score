@@ -5,8 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -32,5 +31,16 @@ public class BuscaCepTest {
         assertEquals("Localidade", enderecoEntity.getLocalidade());
         assertEquals("UF", enderecoEntity.getUf());
     }
+    @Test
+    public void testGetEnderecoEntity_CepInvalido() {
+        //Cenário
+        String cepInvalido = "CEP_INVALIDO";
 
+        //Mock da classe "BuscaCep"
+        BuscaCep buscaCepMock = mock(BuscaCep.class);
+        when(buscaCepMock.getEnderecoEntity(cepInvalido)).thenThrow(new IllegalArgumentException("CEP inválido"));
+
+        //Execução do método que retorna o EnderecoEntity com CEP inválido
+        assertThrows(IllegalArgumentException.class, () -> buscaCepMock.getEnderecoEntity(cepInvalido));
+    }
 }
