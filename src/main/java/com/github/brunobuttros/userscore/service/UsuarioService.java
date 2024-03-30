@@ -98,4 +98,28 @@ public class UsuarioService {
         // Salva as alterações e retorna o usuario atualizado
         return usuarioRepository.save(usuarioExistente);
     }
+
+    public void deletarUsuario(Long id) {
+        UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuario não encontrado"));
+        usuarioRepository.delete(usuarioExistente);
+    }
+
+    public List<UsuarioEntity> findAllUsuarios(UsuarioDTO usuarioDTO) {
+        if (usuarioDTO.id() != null
+                || !usuarioDTO.nome().isEmpty()
+                || !usuarioDTO.email().isEmpty()
+                || !usuarioDTO.telefone().isEmpty()
+                || !usuarioDTO.cpf().isEmpty()) {
+            return usuarioRepository.findByIdOrNomeOrEmailOrTelefoneOrCpf(
+                    usuarioDTO.id(),
+                    usuarioDTO.nome(),
+                    usuarioDTO.email(),
+                    usuarioDTO.telefone(),
+                    usuarioDTO.cpf());
+        } else {
+            return usuarioRepository.findAll();
+        }
+
+    }
 }
