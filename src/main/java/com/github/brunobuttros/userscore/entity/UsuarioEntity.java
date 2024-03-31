@@ -15,7 +15,8 @@ import java.util.List;
 @EqualsAndHashCode(of = "id")
 
 public class UsuarioEntity {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String nome;
@@ -24,7 +25,15 @@ public class UsuarioEntity {
     private String cpf;
     private int score;
 
-    @OneToMany (mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
     private List<EnderecoEntity> enderecos = new ArrayList<>(3);
+
+    public UsuarioEntity(String nome, String email, String telefone, String cpf, int score) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.cpf = cpf;
+        this.score = score;
+    }
 
 }

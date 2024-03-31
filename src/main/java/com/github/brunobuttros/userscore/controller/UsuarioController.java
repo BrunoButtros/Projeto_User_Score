@@ -22,7 +22,8 @@ public class UsuarioController {
         this.usuarioService = usuarioService;
     }
 
-    @PostMapping  //O método cadastrar, recebe o usuarioDTO no corpo da solicitação, e chama o método da usuario Service
+    @PostMapping
+    //O método cadastrar, recebe o usuarioDTO no corpo da solicitação, e chama o método da usuario Service
     public ResponseEntity<UsuarioEntity> cadastrarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
         UsuarioEntity usuarioCadastrado = usuarioService.cadastrarUsuario(usuarioDTO);
         // Retorna o status HTTP 201 (CREATED) e retorna o usuario recém criado
@@ -39,7 +40,7 @@ public class UsuarioController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT) //Retorna HTTP 204
-    public ResponseEntity<Void>deletarUsuario(@PathVariable Long id){
+    public ResponseEntity<Void> deletarUsuario(@PathVariable Long id) {
         //Recebe o id do usuário e chama o método correspondente
         usuarioService.deletarUsuario(id);
         return ResponseEntity.noContent().build();

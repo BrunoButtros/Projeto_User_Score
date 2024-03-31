@@ -18,8 +18,8 @@ public class ScoreApiClient {
         this.restTemplate = restTemplate;
     }
 
-    public int getScore(Long userId) {
-        String apiUrl = scoreApiUrl + "/usuarios/" + userId + "/score";
+    public int getScore(String cpf) {
+        String apiUrl = scoreApiUrl + "/usuarios/" + cpf + "/score";
         ResponseEntity<Integer> response = restTemplate.getForEntity(apiUrl, Integer.class);
         Integer score = response.getBody();
         if (score != null) {
