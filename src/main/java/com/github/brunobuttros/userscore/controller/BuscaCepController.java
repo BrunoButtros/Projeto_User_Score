@@ -10,24 +10,26 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/buscaCep")
+@RequestMapping("/cep")
 public class BuscaCepController {
+
     private final BuscaCep buscaCep;
 
     @Autowired
-    public BuscaCepController(BuscaCep buscaCep){
+    public BuscaCepController(BuscaCep buscaCep) {
         this.buscaCep = buscaCep;
     }
 
     @GetMapping("/{cep}")
     public EnderecoDTO getEnderecoByCep(@PathVariable String cep) {
-        EnderecoEntity enderecoEntity = buscaCep.getEnderecoEntity(cep);
-        return new EnderecoDTO(enderecoEntity.getId(),
+        EnderecoEntity enderecoEntity = buscaCep.buscarEnderecoPorCep(cep);
+        return new EnderecoDTO(
+                enderecoEntity.getId(),
                 enderecoEntity.getCep(),
                 enderecoEntity.getLogradouro(),
                 enderecoEntity.getBairro(),
                 enderecoEntity.getLocalidade(),
-                enderecoEntity.getUf());
+                enderecoEntity.getUf()
+        );
     }
-
 }
