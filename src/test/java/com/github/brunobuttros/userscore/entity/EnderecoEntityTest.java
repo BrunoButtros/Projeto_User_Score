@@ -26,8 +26,6 @@ public class EnderecoEntityTest {
         assertEquals("Cidade Exemplo", endereco.getLocalidade());
         assertEquals("UF", endereco.getUf());
 
-
-
     }
 
 }

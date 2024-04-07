@@ -1,11 +1,8 @@
 package com.github.brunobuttros.userscore.dto;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.antlr.v4.runtime.misc.NotNull;
 
-public record UsuarioDTO(Long id, String nome, String email, String telefone, String cpf, int score,
-                         List<EnderecoDTO> enderecos) {
-    public UsuarioDTO {
-        enderecos = new ArrayList<>();
-    }
+public record UsuarioDTO(Long id, String nome, String email, String telefone, String cpf, String cep, @NotNull int score,
+                         EnderecoDTO endereco) {
+
 }
