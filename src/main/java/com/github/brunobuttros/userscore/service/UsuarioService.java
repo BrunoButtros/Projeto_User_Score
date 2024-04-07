@@ -8,6 +8,9 @@ import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
+import java.util.List;
+
 @Service
 public class UsuarioService {
 
@@ -37,6 +40,35 @@ public class UsuarioService {
         usuarioEntity.setEndereco(enderecoEntity);
 
         return usuarioRepository.save(usuarioEntity);
+    }
+
+    public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
+        UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
+
+        usuarioExistente.setNome(usuarioDTO.nome());
+        usuarioExistente.setEmail(usuarioDTO.email());
+        usuarioExistente.setTelefone(usuarioDTO.telefone());
+        usuarioExistente.setCpf(usuarioDTO.cpf());
+        usuarioExistente.setCep(usuarioDTO.cep());
+
+        int score = scoreApiClient.getScore(usuarioDTO.cpf());
+        usuarioExistente.setScore(score);
+
+        EnderecoEntity enderecoExistente = usuarioExistente.getEndereco();
+        if (enderecoExistente == null || !enderecoExistente.getCep().equals(usuarioDTO.cep())) {
+            EnderecoEntity enderecoEntity = buscaCep.buscarEnderecoPorCep(usuarioDTO.cep());
+            usuarioExistente.setEndereco(enderecoEntity);
+        }
+
+        return usuarioRepository.save(usuarioExistente);
+    }
+
+    public void deletarUsuario(Long id) {
+        UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
+
+        usuarioRepository.delete(usuarioExistente);
     }
 
     public UsuarioDTO convertEntityToDTO(UsuarioEntity usuarioEntity) {
@@ -70,5 +102,22 @@ public class UsuarioService {
 
     private int obterScorePorCpf(String cpf) {
         return scoreApiClient.getScore(cpf);
+    }
+
+    public List<UsuarioEntity> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
+        if (id != null) {
+            return Collections.singletonList(usuarioRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)));
+        } else if (nome != null) {
+            return usuarioRepository.findByNome(nome);
+        } else if (email != null) {
+            return usuarioRepository.findByEmail(email);
+        } else if (telefone != null) {
+            return usuarioRepository.findByTelefone(telefone);
+        } else if (cpf != null) {
+            return usuarioRepository.findByCpf(cpf);
+        } else {
+            return usuarioRepository.findAll();
+        }
     }
 }
