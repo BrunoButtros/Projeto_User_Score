@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UsuarioService {
@@ -17,12 +18,17 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final BuscaCep buscaCep;
     private final ScoreApiClient scoreApiClient;
+    private final FileService fileService;
 
     @Autowired
-    public UsuarioService(UsuarioRepository usuarioRepository, BuscaCep buscaCep, ScoreApiClient scoreApiClient) {
+    public UsuarioService(UsuarioRepository usuarioRepository,
+                          BuscaCep buscaCep,
+                          ScoreApiClient scoreApiClient,
+                          FileService fileService) {
         this.usuarioRepository = usuarioRepository;
         this.buscaCep = buscaCep;
         this.scoreApiClient = scoreApiClient;
+        this.fileService = fileService;
     }
 
     public UsuarioEntity cadastrarUsuario(UsuarioDTO usuarioDTO) {
@@ -39,7 +45,11 @@ public class UsuarioService {
         usuarioEntity.setScore(score);
         usuarioEntity.setEndereco(enderecoEntity);
 
-        return usuarioRepository.save(usuarioEntity);
+
+        usuarioRepository.save(usuarioEntity);
+        atualizarArquivoUsuarios();
+        return usuarioEntity;
+
     }
 
     public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
@@ -60,15 +70,32 @@ public class UsuarioService {
             EnderecoEntity enderecoEntity = buscaCep.buscarEnderecoPorCep(usuarioDTO.cep());
             usuarioExistente.setEndereco(enderecoEntity);
         }
-
-        return usuarioRepository.save(usuarioExistente);
+        usuarioRepository.save(usuarioExistente);
+        atualizarArquivoUsuarios();
+        return usuarioExistente;
     }
-
+    public List<UsuarioEntity> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
+        if (id != null) {
+            return Collections.singletonList(usuarioRepository.findById(id)
+                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)));
+        } else if (nome != null) {
+            return usuarioRepository.findByNome(nome);
+        } else if (email != null) {
+            return usuarioRepository.findByEmail(email);
+        } else if (telefone != null) {
+            return usuarioRepository.findByTelefone(telefone);
+        } else if (cpf != null) {
+            return usuarioRepository.findByCpf(cpf);
+        } else {
+            return usuarioRepository.findAll();
+        }
+    }
     public void deletarUsuario(Long id) {
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
 
         usuarioRepository.delete(usuarioExistente);
+        atualizarArquivoUsuarios();
     }
 
     public UsuarioDTO convertEntityToDTO(UsuarioEntity usuarioEntity) {
@@ -104,20 +131,10 @@ public class UsuarioService {
         return scoreApiClient.getScore(cpf);
     }
 
-    public List<UsuarioEntity> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
-        if (id != null) {
-            return Collections.singletonList(usuarioRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)));
-        } else if (nome != null) {
-            return usuarioRepository.findByNome(nome);
-        } else if (email != null) {
-            return usuarioRepository.findByEmail(email);
-        } else if (telefone != null) {
-            return usuarioRepository.findByTelefone(telefone);
-        } else if (cpf != null) {
-            return usuarioRepository.findByCpf(cpf);
-        } else {
-            return usuarioRepository.findAll();
-        }
+    private void atualizarArquivoUsuarios() {
+        List<UsuarioDTO> usuarios = usuarioRepository.findAll().stream()
+                .map(this::convertEntityToDTO)
+                .collect(Collectors.toList());
+        fileService.criarArquivoUsuario(usuarios);
     }
 }
