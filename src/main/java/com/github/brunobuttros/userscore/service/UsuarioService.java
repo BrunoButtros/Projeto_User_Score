@@ -6,6 +6,7 @@ import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -74,6 +75,7 @@ public class UsuarioService {
         atualizarArquivoUsuarios();
         return usuarioExistente;
     }
+
     public List<UsuarioEntity> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
         if (id != null) {
             return Collections.singletonList(usuarioRepository.findById(id)
@@ -90,12 +92,38 @@ public class UsuarioService {
             return usuarioRepository.findAll();
         }
     }
+
     public void deletarUsuario(Long id) {
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
 
         usuarioRepository.delete(usuarioExistente);
         atualizarArquivoUsuarios();
+    }
+
+
+    private EnderecoEntity buscaEnderecoPorCep(String cep) {
+        return buscaCep.buscarEnderecoPorCep(cep);
+    }
+
+    private int obterScorePorCpf(String cpf) {
+        return scoreApiClient.getScore(cpf);
+    }
+
+    private void atualizarArquivoUsuarios() {
+        List<UsuarioDTO> usuarios = usuarioRepository.findAll().stream()
+                .map(this::convertEntityToDTO)
+                .collect(Collectors.toList());
+        fileService.criarArquivoUsuario(usuarios);
+    }
+
+    @Scheduled(fixedDelayString = "12:00:00")
+    public void atualizarArquivoUsuariosPeriodicamente() {
+        try {
+            atualizarArquivoUsuarios();
+        } catch (Exception e) {
+            System.err.println("Falha ao atualizar os usuarios" + e.getMessage());
+        }
     }
 
     public UsuarioDTO convertEntityToDTO(UsuarioEntity usuarioEntity) {
@@ -121,20 +149,5 @@ public class UsuarioService {
                 enderecoEntity.getLocalidade(),
                 enderecoEntity.getUf()
         );
-    }
-
-    private EnderecoEntity buscaEnderecoPorCep(String cep) {
-        return buscaCep.buscarEnderecoPorCep(cep);
-    }
-
-    private int obterScorePorCpf(String cpf) {
-        return scoreApiClient.getScore(cpf);
-    }
-
-    private void atualizarArquivoUsuarios() {
-        List<UsuarioDTO> usuarios = usuarioRepository.findAll().stream()
-                .map(this::convertEntityToDTO)
-                .collect(Collectors.toList());
-        fileService.criarArquivoUsuario(usuarios);
     }
 }
