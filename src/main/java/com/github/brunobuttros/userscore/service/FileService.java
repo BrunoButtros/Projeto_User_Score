@@ -8,6 +8,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -47,6 +48,16 @@ public class FileService {
     @Scheduled(fixedDelay = 5000)
     public void atualizarArquivoUsuariosPeriodicamente() {
         try {
+            String nomeArquivo = "usuarios_scores.txt";
+            File arquivo = new File(nomeArquivo);
+            if (arquivo.exists()) {
+                boolean deletado = arquivo.delete();
+                if (!deletado) {
+                    System.err.println("Falha ao excluir o arquivo " + nomeArquivo);
+                } else {
+                    System.out.println("Arquivo deletado com sucesso");
+                }
+            }
             List<UsuarioDTO> usuarios = new ArrayList<>();
             List<UsuarioEntity> usuariosFromRepository = usuarioRepository.findAll();
 
