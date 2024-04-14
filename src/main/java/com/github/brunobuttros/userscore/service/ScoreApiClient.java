@@ -23,7 +23,7 @@ public class ScoreApiClient {
     }
 
     public int getScore(String cpf) {
-        String apiUrl = scoreApiUrl + "/calculate";
+        String apiUrl = scoreApiUrl;
         try {
             CpfRequest cpfRequest = new CpfRequest(cpf);
             ResponseEntity<ScoreResponse> response = restTemplate.postForEntity(apiUrl, cpfRequest, ScoreResponse.class);

@@ -1,5 +1,6 @@
 package com.github.brunobuttros.userscore.controller;
 
+import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.service.UsuarioService;
@@ -29,7 +30,7 @@ public class UsuarioController {
 
 
     @PutMapping("{id}")
-    public ResponseEntity<UsuarioDTO> atualizarCadastro(@PathVariable Long id,@RequestBody UsuarioDTO usuarioDTO){
+    public ResponseEntity<UsuarioDTO> atualizarCadastro(@PathVariable Long id, @RequestBody UsuarioDTO usuarioDTO) {
         UsuarioEntity usuarioAtualizado = usuarioService.atualizarUsuario(id, usuarioDTO);
         UsuarioDTO usuarioAtualizadoDTO = usuarioService.convertEntityToDTO(usuarioAtualizado);
         return ResponseEntity.ok(usuarioAtualizadoDTO);
@@ -48,8 +49,13 @@ public class UsuarioController {
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity<UsuarioDTO> deletarUsuario(@PathVariable Long id){
+    public ResponseEntity<UsuarioDTO> deletarUsuario(@PathVariable Long id) {
         usuarioService.deletarUsuario(id);
         return ResponseEntity.noContent().build();
+    }
+    @GetMapping("/{id}/score")
+    public ResponseEntity<UserScoreDTO> getUserScoreById(@PathVariable Long id) {
+        UserScoreDTO userScoreDTO = usuarioService.getUserScoreById(id);
+        return ResponseEntity.ok(userScoreDTO);
     }
 }

@@ -1,17 +1,16 @@
 package com.github.brunobuttros.userscore.service;
 
 import com.github.brunobuttros.userscore.dto.EnderecoDTO;
+import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class UsuarioService {
@@ -19,17 +18,14 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final BuscaCep buscaCep;
     private final ScoreApiClient scoreApiClient;
-    private final FileService fileService;
 
     @Autowired
     public UsuarioService(UsuarioRepository usuarioRepository,
                           BuscaCep buscaCep,
-                          ScoreApiClient scoreApiClient,
-                          FileService fileService) {
+                          ScoreApiClient scoreApiClient) {
         this.usuarioRepository = usuarioRepository;
         this.buscaCep = buscaCep;
         this.scoreApiClient = scoreApiClient;
-        this.fileService = fileService;
     }
 
     public UsuarioEntity cadastrarUsuario(UsuarioDTO usuarioDTO) {
@@ -48,7 +44,6 @@ public class UsuarioService {
 
 
         usuarioRepository.save(usuarioEntity);
-        atualizarArquivoUsuarios();
         return usuarioEntity;
 
     }
@@ -72,7 +67,6 @@ public class UsuarioService {
             usuarioExistente.setEndereco(enderecoEntity);
         }
         usuarioRepository.save(usuarioExistente);
-        atualizarArquivoUsuarios();
         return usuarioExistente;
     }
 
@@ -98,10 +92,15 @@ public class UsuarioService {
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
 
         usuarioRepository.delete(usuarioExistente);
-        atualizarArquivoUsuarios();
     }
+    public UserScoreDTO getUserScoreById(Long id) {
+        UsuarioEntity usuarioEntity = usuarioRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
 
+        int score = scoreApiClient.getScore(usuarioEntity.getCpf());
 
+        return new UserScoreDTO(usuarioEntity.getId(), score);
+    }
     private EnderecoEntity buscaEnderecoPorCep(String cep) {
         return buscaCep.buscarEnderecoPorCep(cep);
     }
@@ -110,21 +109,6 @@ public class UsuarioService {
         return scoreApiClient.getScore(cpf);
     }
 
-    private void atualizarArquivoUsuarios() {
-        List<UsuarioDTO> usuarios = usuarioRepository.findAll().stream()
-                .map(this::convertEntityToDTO)
-                .collect(Collectors.toList());
-        fileService.criarArquivoUsuario(usuarios);
-    }
-
-    @Scheduled(fixedDelayString = "12:00:00")
-    public void atualizarArquivoUsuariosPeriodicamente() {
-        try {
-            atualizarArquivoUsuarios();
-        } catch (Exception e) {
-            System.err.println("Falha ao atualizar os usuarios" + e.getMessage());
-        }
-    }
 
     public UsuarioDTO convertEntityToDTO(UsuarioEntity usuarioEntity) {
         EnderecoEntity endereco = usuarioEntity.getEndereco();

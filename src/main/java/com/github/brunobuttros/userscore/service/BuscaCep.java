@@ -33,8 +33,7 @@ public class BuscaCep {
 
         try {
             String json = restTemplate.getForObject(url, String.class);
-            EnderecoEntity enderecoEntity = objectMapper.readValue(json, EnderecoEntity.class);
-            return enderecoEntity;
+            return objectMapper.readValue(json, EnderecoEntity.class);
         } catch (RestClientException | IOException e) {
             throw new CepInvalidoException("CEP inválido ou não encontrado: " + cep);
         }
