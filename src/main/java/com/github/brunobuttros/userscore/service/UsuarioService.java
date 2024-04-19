@@ -5,6 +5,7 @@ import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
+import com.github.brunobuttros.userscore.exceptions.UsuarioNotFoundException;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -73,7 +74,7 @@ public class UsuarioService {
     public List<UsuarioEntity> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
         if (id != null) {
             return Collections.singletonList(usuarioRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)));
+                    .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado com o ID: " + id)));
         } else if (nome != null) {
             return usuarioRepository.findByNome(nome);
         } else if (email != null) {
