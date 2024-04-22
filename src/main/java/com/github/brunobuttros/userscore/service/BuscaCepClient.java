@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 import java.io.IOException;
 
 @Service
-public class BuscaCep {
+public class BuscaCepClient {
 
     @Value("${viacep.url}")
     private String viaCepUrl;
@@ -19,7 +19,7 @@ public class BuscaCep {
     private final RestTemplate restTemplate;
     private final ObjectMapper objectMapper;
 
-    public BuscaCep(RestTemplate restTemplate, ObjectMapper objectMapper) {
+    public BuscaCepClient(RestTemplate restTemplate, ObjectMapper objectMapper) {
         this.restTemplate = restTemplate;
         this.objectMapper = objectMapper;
     }

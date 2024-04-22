@@ -1,6 +1,6 @@
-ID: 1, score atual: 20
-ID: 2, score atual: 32
-ID: 3, score atual: 88
-ID: 4, score atual: 49
-ID: 5, score atual: 23
-ID: 6, score atual: 18
+ID: 1, score atual: 4
+ID: 2, score atual: 93
+ID: 3, score atual: 61
+ID: 4, score atual: 66
+ID: 5, score atual: 7
+ID: 6, score atual: 2

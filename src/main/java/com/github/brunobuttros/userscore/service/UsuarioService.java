@@ -17,22 +17,22 @@ import java.util.List;
 public class UsuarioService {
 
     private final UsuarioRepository usuarioRepository;
-    private final BuscaCep buscaCep;
+    private final BuscaCepClient buscaCepClient;
     private final ScoreApiClient scoreApiClient;
 
     @Autowired
     public UsuarioService(UsuarioRepository usuarioRepository,
-                          BuscaCep buscaCep,
+                          BuscaCepClient buscaCepClient,
                           ScoreApiClient scoreApiClient) {
         this.usuarioRepository = usuarioRepository;
-        this.buscaCep = buscaCep;
+        this.buscaCepClient = buscaCepClient;
         this.scoreApiClient = scoreApiClient;
     }
 
     public UsuarioEntity cadastrarUsuario(UsuarioDTO usuarioDTO) {
         int score = scoreApiClient.getScore(usuarioDTO.cpf());
 
-        EnderecoEntity enderecoEntity = buscaCep.buscarEnderecoPorCep(usuarioDTO.cep());
+        EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(usuarioDTO.cep());
 
         UsuarioEntity usuarioEntity = new UsuarioEntity();
         usuarioEntity.setNome(usuarioDTO.nome());
@@ -64,7 +64,7 @@ public class UsuarioService {
 
         EnderecoEntity enderecoExistente = usuarioExistente.getEndereco();
         if (enderecoExistente == null || !enderecoExistente.getCep().equals(usuarioDTO.cep())) {
-            EnderecoEntity enderecoEntity = buscaCep.buscarEnderecoPorCep(usuarioDTO.cep());
+            EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(usuarioDTO.cep());
             usuarioExistente.setEndereco(enderecoEntity);
         }
         usuarioRepository.save(usuarioExistente);
@@ -103,7 +103,7 @@ public class UsuarioService {
         return new UserScoreDTO(usuarioEntity.getId(), score);
     }
     private EnderecoEntity buscaEnderecoPorCep(String cep) {
-        return buscaCep.buscarEnderecoPorCep(cep);
+        return buscaCepClient.buscarEnderecoPorCep(cep);
     }
 
     private int obterScorePorCpf(String cpf) {
