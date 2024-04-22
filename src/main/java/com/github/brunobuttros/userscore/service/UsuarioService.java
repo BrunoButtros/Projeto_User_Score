@@ -1,6 +1,7 @@
 package com.github.brunobuttros.userscore.service;
 
 import com.github.brunobuttros.userscore.dto.EnderecoDTO;
+import com.github.brunobuttros.userscore.dto.RegisterDTO;
 import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
@@ -8,6 +9,9 @@ import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.exceptions.UsuarioNotFoundException;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
@@ -29,35 +33,42 @@ public class UsuarioService {
         this.scoreApiClient = scoreApiClient;
     }
 
-    public UsuarioEntity cadastrarUsuario(UsuarioDTO usuarioDTO) {
-        int score = scoreApiClient.getScore(usuarioDTO.cpf());
+    public ResponseEntity register(RegisterDTO data) {
+        if (usuarioRepository.existsByLogin(data.login()) || usuarioRepository.existsByCpf(data.cpf())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário com login ou CPF já existente.");
+        }
 
-        EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(usuarioDTO.cep());
+        int score = scoreApiClient.getScore(data.cpf());
+        EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(data.cep());
 
-        UsuarioEntity usuarioEntity = new UsuarioEntity();
-        usuarioEntity.setNome(usuarioDTO.nome());
-        usuarioEntity.setEmail(usuarioDTO.email());
-        usuarioEntity.setTelefone(usuarioDTO.telefone());
-        usuarioEntity.setCpf(usuarioDTO.cpf());
-        usuarioEntity.setCep(usuarioDTO.cep());
-        usuarioEntity.setScore(score);
-        usuarioEntity.setEndereco(enderecoEntity);
+        String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
+        UsuarioEntity novoUsuario = new UsuarioEntity(data.login(), encryptedPassword, data.role());
+        novoUsuario.setNome(data.nome());
+        novoUsuario.setEmail(data.email());
+        novoUsuario.setCpf(data.cpf());
+        novoUsuario.setTelefone(data.telefone());
+        novoUsuario.setCep(data.cep());
+        novoUsuario.setScore(score);
+        novoUsuario.setEndereco(enderecoEntity);
 
-
-        usuarioRepository.save(usuarioEntity);
-        return usuarioEntity;
-
+        UsuarioEntity usuarioSalvo = this.usuarioRepository.save(novoUsuario);
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioSalvo);
     }
 
     public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
 
-        usuarioExistente.setNome(usuarioDTO.nome());
-        usuarioExistente.setEmail(usuarioDTO.email());
-        usuarioExistente.setTelefone(usuarioDTO.telefone());
-        usuarioExistente.setCpf(usuarioDTO.cpf());
-        usuarioExistente.setCep(usuarioDTO.cep());
+
+        if (usuarioDTO.email() != null) {
+            usuarioExistente.setEmail(usuarioDTO.email());
+        }
+        if (usuarioDTO.telefone() != null) {
+            usuarioExistente.setTelefone(usuarioDTO.telefone());
+        }
+        if (usuarioDTO.cep() != null) {
+            usuarioExistente.setCep(usuarioDTO.cep());
+        }
 
         int score = scoreApiClient.getScore(usuarioDTO.cpf());
         usuarioExistente.setScore(score);
@@ -94,6 +105,7 @@ public class UsuarioService {
 
         usuarioRepository.delete(usuarioExistente);
     }
+
     public UserScoreDTO getUserScoreById(Long id) {
         UsuarioEntity usuarioEntity = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
@@ -102,6 +114,7 @@ public class UsuarioService {
 
         return new UserScoreDTO(usuarioEntity.getId(), score);
     }
+
     private EnderecoEntity buscaEnderecoPorCep(String cep) {
         return buscaCepClient.buscarEnderecoPorCep(cep);
     }

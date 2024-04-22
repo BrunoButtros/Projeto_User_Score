@@ -1,18 +1,23 @@
 package com.github.brunobuttros.userscore.controller;
 
+import com.github.brunobuttros.userscore.dto.RegisterDTO;
 import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
+import com.github.brunobuttros.userscore.repository.UsuarioRepository;
+import com.github.brunobuttros.userscore.service.BuscaCepClient;
+import com.github.brunobuttros.userscore.service.ScoreApiClient;
 import com.github.brunobuttros.userscore.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/user")
 public class UsuarioController {
     private final UsuarioService usuarioService;
 
@@ -20,12 +25,16 @@ public class UsuarioController {
     public UsuarioController(UsuarioService usuarioService) {
         this.usuarioService = usuarioService;
     }
+    @Autowired
+    private UsuarioRepository usuarioRepository;
+    @Autowired
+    private ScoreApiClient scoreApiClient;
+    @Autowired
+    private BuscaCepClient buscaCepClient;
 
-    @PostMapping("/cadastrar")
-    public ResponseEntity<UsuarioDTO> cadastrarUsuario(@RequestBody UsuarioDTO usuarioDTO) {
-        UsuarioEntity usuarioCadastrado = usuarioService.cadastrarUsuario(usuarioDTO);
-        UsuarioDTO usuarioCadastradoDTO = usuarioService.convertEntityToDTO(usuarioCadastrado);
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioCadastradoDTO);
+    @PostMapping("/register")
+    public ResponseEntity register(@RequestBody @Validated RegisterDTO data) {
+        return usuarioService.register(data);
     }
 
 
@@ -35,7 +44,6 @@ public class UsuarioController {
         UsuarioDTO usuarioAtualizadoDTO = usuarioService.convertEntityToDTO(usuarioAtualizado);
         return ResponseEntity.ok(usuarioAtualizadoDTO);
     }
-
 
     @GetMapping("/buscar")
     public ResponseEntity<List<UsuarioEntity>> buscarUsuarios(@RequestParam(required = false) Long id,
@@ -53,6 +61,7 @@ public class UsuarioController {
         usuarioService.deletarUsuario(id);
         return ResponseEntity.noContent().build();
     }
+
     @GetMapping("/{id}/score")
     public ResponseEntity<UserScoreDTO> getUserScoreById(@PathVariable Long id) {
         UserScoreDTO userScoreDTO = usuarioService.getUserScoreById(id);

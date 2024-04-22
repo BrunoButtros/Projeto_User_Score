@@ -11,9 +11,14 @@ import java.util.List;
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
     List<UsuarioEntity> findByNome(String nome);
+
     List<UsuarioEntity> findByEmail(String email);
+
     List<UsuarioEntity> findByTelefone(String telefone);
+
     List<UsuarioEntity> findByCpf(String cpf);
 
     UserDetails findByLogin(String login);
-}
+
+    boolean existsByLogin(String login);
+    boolean existsByCpf(String cpf);}

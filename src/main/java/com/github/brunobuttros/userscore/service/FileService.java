@@ -45,7 +45,7 @@ public class FileService {
         }
     }
 
-    @Scheduled(fixedDelay = 5000)
+    @Scheduled(fixedDelay = 50000)
     public void atualizarArquivoUsuariosPeriodicamente() {
         try {
             String nomeArquivo = "usuarios_scores.txt";
