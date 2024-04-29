@@ -1,6 +1,5 @@
 package com.github.brunobuttros.userscore.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,10 +22,6 @@ public class EnderecoEntity {
         private String bairro;
         private String localidade;
         private String uf;
-
-        @ManyToOne
-        @JsonIgnore
-        private UsuarioEntity usuario;
 
      public EnderecoEntity(String cep, String logradouro, String bairro, String localidade, String uf) {
                 this.cep = cep;

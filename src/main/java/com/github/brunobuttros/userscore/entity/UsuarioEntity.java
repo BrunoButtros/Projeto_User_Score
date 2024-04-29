@@ -1,5 +1,6 @@
 package com.github.brunobuttros.userscore.entity;
 
+import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -35,7 +36,7 @@ public class UsuarioEntity implements UserDetails {
     @Enumerated(EnumType.STRING)
     private UsuarioRole role;
 
-    @OneToOne(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.ALL)
     private EnderecoEntity endereco;
 
 
@@ -77,4 +78,18 @@ public class UsuarioEntity implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
+
+    public UsuarioDTO toDTO() {
+        return new UsuarioDTO(
+                this.id,
+                this.nome,
+                this.email,
+                this.telefone,
+                this.cpf,
+                this.cep,
+                this.score,
+                null
+        );
+    }
+
 }

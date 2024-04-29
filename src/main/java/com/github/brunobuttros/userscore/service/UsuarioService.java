@@ -7,6 +7,7 @@ import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.exceptions.UsuarioNotFoundException;
+import com.github.brunobuttros.userscore.repository.EnderecoRepository;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UsuarioService {
@@ -23,14 +25,17 @@ public class UsuarioService {
     private final UsuarioRepository usuarioRepository;
     private final BuscaCepClient buscaCepClient;
     private final ScoreApiClient scoreApiClient;
-
+    private final EnderecoRepository enderecoRepository;
+    
     @Autowired
     public UsuarioService(UsuarioRepository usuarioRepository,
                           BuscaCepClient buscaCepClient,
-                          ScoreApiClient scoreApiClient) {
+                          ScoreApiClient scoreApiClient,
+                          EnderecoRepository enderecoRepository) {
         this.usuarioRepository = usuarioRepository;
         this.buscaCepClient = buscaCepClient;
         this.scoreApiClient = scoreApiClient;
+        this.enderecoRepository = enderecoRepository;
     }
 
     public ResponseEntity register(RegisterDTO data) {
@@ -56,28 +61,30 @@ public class UsuarioService {
     }
 
     public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
+;
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
 
-
-        if (usuarioDTO.email() != null) {
+        if (usuarioDTO.email() != null && !usuarioExistente.getEmail().equals(usuarioDTO.email())) {
             usuarioExistente.setEmail(usuarioDTO.email());
         }
-        if (usuarioDTO.telefone() != null) {
+        if (!usuarioExistente.getTelefone().equals(usuarioDTO.telefone()) && !usuarioDTO.telefone().isBlank()) {
             usuarioExistente.setTelefone(usuarioDTO.telefone());
         }
-        if (usuarioDTO.cep() != null) {
+        if (!usuarioExistente.getCep().equals(usuarioDTO.cep())&& Objects.nonNull(usuarioDTO.cep())) {
+            EnderecoEntity enderecoExistente = enderecoRepository.findByCep(usuarioDTO.cep());
+            if (enderecoExistente != null) {
+                usuarioExistente.setEndereco(enderecoExistente);
+            } else {
+                EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(usuarioDTO.cep());
+                usuarioExistente.setEndereco(enderecoEntity);
+            }
             usuarioExistente.setCep(usuarioDTO.cep());
         }
 
         int score = scoreApiClient.getScore(usuarioDTO.cpf());
         usuarioExistente.setScore(score);
 
-        EnderecoEntity enderecoExistente = usuarioExistente.getEndereco();
-        if (enderecoExistente == null || !enderecoExistente.getCep().equals(usuarioDTO.cep())) {
-            EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(usuarioDTO.cep());
-            usuarioExistente.setEndereco(enderecoEntity);
-        }
         usuarioRepository.save(usuarioExistente);
         return usuarioExistente;
     }
