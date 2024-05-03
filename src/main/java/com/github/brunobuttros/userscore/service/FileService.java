@@ -20,13 +20,14 @@ public class FileService {
     private final UsuarioRepository usuarioRepository;
     private final UsuarioService usuarioService;
     private final ScoreApiClient scoreApiClient;
-
+    private final EmailService emailService;
 
     @Autowired
-    public FileService(UsuarioRepository usuarioRepository, UsuarioService usuarioService, ScoreApiClient scoreApiClient) {
+    public FileService(UsuarioRepository usuarioRepository, UsuarioService usuarioService, ScoreApiClient scoreApiClient, EmailService emailService) {
         this.usuarioRepository = usuarioRepository;
         this.usuarioService = usuarioService;
         this.scoreApiClient = scoreApiClient;
+        this.emailService = emailService;
     }
 
     public void criarArquivoUsuario(List<UsuarioDTO> usuarios) {
@@ -44,8 +45,7 @@ public class FileService {
             System.err.println("Falha ao criar o arquivo" + e.getMessage());
         }
     }
-
-    @Scheduled(fixedDelay = 500000)
+    @Scheduled(fixedDelay = 50000)
     public void atualizarArquivoUsuariosPeriodicamente() {
         try {
             String nomeArquivo = "usuarios_scores.txt";
@@ -77,8 +77,9 @@ public class FileService {
                         null // endereco
                 ));
             }
-
             criarArquivoUsuario(usuarios);
+            String caminhoDoDocumento = "C:\\Users\\bruno\\Desktop\\user-score\\usuarios_scores.txt";
+            emailService.enviarDocumentoParaAdmins(caminhoDoDocumento);
         } catch (Exception e) {
             System.err.println("Falha ao atualizar os usuários: " + e.getMessage());
         }
