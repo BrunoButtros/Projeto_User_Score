@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 @Service
 public class UsuarioService {
@@ -65,12 +64,13 @@ public class UsuarioService {
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
 
-        if (usuarioDTO.email() != null && !usuarioExistente.getEmail().equals(usuarioDTO.email())) {
+        if (usuarioDTO.email() != null && !usuarioDTO.email().equals(usuarioExistente.getEmail())) {
             usuarioExistente.setEmail(usuarioDTO.email());
         }
-        if (usuarioDTO.telefone() != null && !usuarioExistente.getTelefone().equals(usuarioDTO.telefone)){
+        if (usuarioDTO.telefone() != null && !usuarioDTO.telefone().equals(usuarioExistente.getTelefone())) {
+            usuarioExistente.setTelefone(usuarioDTO.telefone());
         }
-        if (!usuarioExistente.getCep().equals(usuarioDTO.cep())&& Objects.nonNull(usuarioDTO.cep())) {
+        if (usuarioDTO.cep() != null && !usuarioDTO.cep().equals(usuarioExistente.getCep())) {
             EnderecoEntity enderecoExistente = enderecoRepository.findByCep(usuarioDTO.cep());
             if (enderecoExistente != null) {
                 usuarioExistente.setEndereco(enderecoExistente);
