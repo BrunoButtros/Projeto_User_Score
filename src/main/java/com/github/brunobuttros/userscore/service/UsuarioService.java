@@ -68,8 +68,7 @@ public class UsuarioService {
         if (usuarioDTO.email() != null && !usuarioExistente.getEmail().equals(usuarioDTO.email())) {
             usuarioExistente.setEmail(usuarioDTO.email());
         }
-        if (!usuarioExistente.getTelefone().equals(usuarioDTO.telefone()) && !usuarioDTO.telefone().isBlank()) {
-            usuarioExistente.setTelefone(usuarioDTO.telefone());
+        if (usuarioDTO.telefone() != null && !usuarioExistente.getTelefone().equals(usuarioDTO.telefone)){
         }
         if (!usuarioExistente.getCep().equals(usuarioDTO.cep())&& Objects.nonNull(usuarioDTO.cep())) {
             EnderecoEntity enderecoExistente = enderecoRepository.findByCep(usuarioDTO.cep());
