@@ -3,7 +3,7 @@ package com.github.brunobuttros.userscore.service;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,10 @@ public class FileService {
     private final ScoreApiClient scoreApiClient;
     private final EmailService emailService;
 
-    @Autowired
+    @Value("${feature.envia.email}")
+   private boolean flagMail;
+
+
     public FileService(UsuarioRepository usuarioRepository, UsuarioService usuarioService, ScoreApiClient scoreApiClient, EmailService emailService) {
         this.usuarioRepository = usuarioRepository;
         this.usuarioService = usuarioService;
@@ -39,7 +42,6 @@ public class FileService {
             }
             System.out.println("Arquivo: '" + nomeArquivo + "' criado com sucesso!");
 
-            // emailService.enviarArquivoPorEmail(nomeArquivo);
 
         } catch (IOException e) {
             System.err.println("Falha ao criar o arquivo" + e.getMessage());
@@ -78,8 +80,9 @@ public class FileService {
                 ));
             }
             criarArquivoUsuario(usuarios);
-            String caminhoDoDocumento = "C:\\Users\\bruno\\Desktop\\user-score\\usuarios_scores.txt";
-            emailService.enviarDocumentoParaAdmins(caminhoDoDocumento);
+           if(flagMail)
+           {String caminhoDoDocumento = "C:\\Users\\bruno\\Desktop\\user-score\\usuarios_scores.txt";
+            emailService.enviarDocumentoParaAdmins(caminhoDoDocumento);}
         } catch (Exception e) {
             System.err.println("Falha ao atualizar os usuários: " + e.getMessage());
         }

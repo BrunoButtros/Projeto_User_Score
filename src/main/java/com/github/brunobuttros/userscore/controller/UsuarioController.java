@@ -46,14 +46,15 @@ public class UsuarioController {
     }
 
     @GetMapping("/buscar")
-    public ResponseEntity<List<UsuarioEntity>> buscarUsuarios(@RequestParam(required = false) Long id,
-                                                              @RequestParam(required = false) String nome,
-                                                              @RequestParam(required = false) String email,
-                                                              @RequestParam(required = false) String telefone,
-                                                              @RequestParam(required = false) String cpf) {
-        List<UsuarioEntity> usuarios = usuarioService.buscarUsuarios(id, nome, email, telefone, cpf);
+    public ResponseEntity<List<UsuarioDTO>> buscarUsuarios(@RequestParam(required = false) Long id,
+                                                           @RequestParam(required = false) String nome,
+                                                           @RequestParam(required = false) String email,
+                                                           @RequestParam(required = false) String telefone,
+                                                           @RequestParam(required = false) String cpf) {
+        List<UsuarioDTO> usuarios = usuarioService.buscarUsuarios(id, nome, email, telefone, cpf);
         return ResponseEntity.ok().body(usuarios);
     }
+
 
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)

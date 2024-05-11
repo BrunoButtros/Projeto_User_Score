@@ -11,13 +11,6 @@ import java.util.List;
 
 @Repository
 public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
-    List<UsuarioEntity> findByNome(String nome);
-
-    List<UsuarioEntity> findByEmail(String email);
-
-    List<UsuarioEntity> findByTelefone(String telefone);
-
-    List<UsuarioEntity> findByCpf(String cpf);
 
     UserDetails findByLogin(String login);
 
@@ -30,4 +23,6 @@ public interface UsuarioRepository extends JpaRepository<UsuarioEntity, Long> {
     }
 
     List<UsuarioEntity> findByRole(UsuarioRole role);
+
+    List<UsuarioEntity> findByIdOrNomeOrEmailOrTelefoneOrCpf(Long id, String nome, String email, String telefone, String cpf);
 }
