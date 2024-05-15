@@ -1,2 +1,2 @@
-ID: 1, score atual: 83
-ID: 2, score atual: 42
+ID: 1, score atual: 26
+ID: 2, score atual: 31

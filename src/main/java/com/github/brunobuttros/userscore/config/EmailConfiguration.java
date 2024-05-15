@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Getter
 @Setter
 @ConfigurationProperties(prefix = "spring.mail")
-public class EmailConfig {
+public class EmailConfiguration {
 
     private String host;
     private String port;

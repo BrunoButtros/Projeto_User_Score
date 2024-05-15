@@ -47,7 +47,7 @@ public class FileService {
             System.err.println("Falha ao criar o arquivo" + e.getMessage());
         }
     }
-    @Scheduled(fixedDelay = 50000)
+    @Scheduled(fixedDelay = 500000)
     public void atualizarArquivoUsuariosPeriodicamente() {
         try {
             String nomeArquivo = "usuarios_scores.txt";

@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 public class AppConfiguration {
 
     @Autowired
-    private EmailConfig emailConfig;
+    private EmailConfiguration emailConfiguration;
 
     @Bean
     public RestTemplate restTemplate() {
@@ -21,10 +21,10 @@ public class AppConfiguration {
     @Bean
     public JavaMailSender javaMailSender(){
         var javaMailSenderImpl = new JavaMailSenderImpl();
-        javaMailSenderImpl.setHost(emailConfig.getHost());
-        javaMailSenderImpl.setPort(Integer.parseInt(emailConfig.getPort()));
-        javaMailSenderImpl.setUsername(emailConfig.getUsername());
-        javaMailSenderImpl.setPassword(emailConfig.getPassword());
+        javaMailSenderImpl.setHost(emailConfiguration.getHost());
+        javaMailSenderImpl.setPort(Integer.parseInt(emailConfiguration.getPort()));
+        javaMailSenderImpl.setUsername(emailConfiguration.getUsername());
+        javaMailSenderImpl.setPassword(emailConfiguration.getPassword());
         var props = javaMailSenderImpl.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");

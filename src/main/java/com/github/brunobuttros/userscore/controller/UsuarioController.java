@@ -8,6 +8,7 @@ import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import com.github.brunobuttros.userscore.service.BuscaCepClient;
 import com.github.brunobuttros.userscore.service.ScoreApiClient;
 import com.github.brunobuttros.userscore.service.UsuarioService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@SecurityRequirement(name = "basicAuth")
 public class UsuarioController {
     private final UsuarioService usuarioService;
 

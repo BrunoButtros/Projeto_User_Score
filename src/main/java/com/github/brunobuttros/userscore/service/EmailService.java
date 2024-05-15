@@ -1,6 +1,6 @@
 package com.github.brunobuttros.userscore.service;
 
-import com.github.brunobuttros.userscore.config.EmailConfig;
+import com.github.brunobuttros.userscore.config.EmailConfiguration;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import jakarta.mail.MessagingException;
@@ -17,7 +17,7 @@ import java.util.List;
 public class EmailService {
 
     @Autowired
-    private EmailConfig emailConfig;
+    private EmailConfiguration emailConfiguration;
 
     @Autowired
     private JavaMailSender emailSender;
@@ -38,7 +38,7 @@ public class EmailService {
 
         try {
             MimeMessageHelper helper = new MimeMessageHelper(mensagem, true);
-            helper.setFrom(emailConfig.getUsername());
+            helper.setFrom(emailConfiguration.getUsername());
             helper.setTo(emailDestino);
             helper.setSubject(assunto);
             helper.setText(texto);
