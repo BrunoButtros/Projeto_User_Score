@@ -1,16 +1,16 @@
 package com.github.brunobuttros.userscore.service;
 
+import com.github.brunobuttros.userscore.dto.CadastrarDTO;
 import com.github.brunobuttros.userscore.dto.EnderecoDTO;
-import com.github.brunobuttros.userscore.dto.RegisterDTO;
 import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
+import com.github.brunobuttros.userscore.exceptions.UsuarioNotFoundException;
 import com.github.brunobuttros.userscore.repository.EnderecoRepository;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,13 +19,14 @@ import java.util.stream.Collectors;
 
 @Service
 public class UsuarioService {
+    private static final Logger logger = LoggerFactory.getLogger(UsuarioService.class);
 
     private final UsuarioRepository usuarioRepository;
     private final BuscaCepClient buscaCepClient;
     private final ScoreApiClient scoreApiClient;
     private final EnderecoRepository enderecoRepository;
-    
-    @Autowired // nao precisa de Autowired
+
+
     public UsuarioService(UsuarioRepository usuarioRepository,
                           BuscaCepClient buscaCepClient,
                           ScoreApiClient scoreApiClient,
@@ -36,9 +37,9 @@ public class UsuarioService {
         this.enderecoRepository = enderecoRepository;
     }
 
-    public ResponseEntity register(RegisterDTO data) {
+    public UsuarioEntity cadastrar(CadastrarDTO data) {
         if (usuarioRepository.existsByLogin(data.login()) || usuarioRepository.existsByCpf(data.cpf())) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Usuário com login ou CPF já existente."); // NAO E RESPONSABILIDADE DE SERVICE CONTROLAR ISSO, Faca um ControllerAdvice com ExceptionHandler.
+            throw new IllegalArgumentException("Usuário com login ou CPF já existente.");
         }
 
         int score = scoreApiClient.getScore(data.cpf());
@@ -54,14 +55,13 @@ public class UsuarioService {
         novoUsuario.setScore(score);
         novoUsuario.setEndereco(enderecoEntity);
 
-        UsuarioEntity usuarioSalvo = this.usuarioRepository.save(novoUsuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioSalvo); //  NAO É RESPONSABILIDADE DA SERVICE RETORNAR RESPONSE ENTITY, E SIM A CONTROLLER
+        return usuarioRepository.save(novoUsuario);
     }
 
     public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
 ;
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)); // tu ja tem uma Exception para usuario not found por que nao usar ela?
+                .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado com o ID: " + id));
 
         if (usuarioDTO.email() != null && !usuarioDTO.email().equals(usuarioExistente.getEmail())) {
             usuarioExistente.setEmail(usuarioDTO.email());
@@ -88,40 +88,42 @@ public class UsuarioService {
     }
 
     public List<UsuarioDTO> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
-        List<UsuarioEntity> entities = usuarioRepository.findByIdOrNomeOrEmailOrTelefoneOrCpf(id, nome, email, telefone, cpf);
+        logger.info("Buscando usuários com os parâmetros - id: {}, nome: {}, email: {}, telefone: {}, cpf: {}", id, nome, email, telefone, cpf);
+
+        List<UsuarioEntity> entities;
+
+        if (id == null && nome == null && email == null && telefone == null && cpf == null) {
+            entities = usuarioRepository.findAll();
+        } else {
+            entities = usuarioRepository.findByIdOrNomeOrEmailOrTelefoneOrCpf(id, nome, email, telefone, cpf);
+        }
+        logger.info("Número de usuários encontrados: {}", entities.size());
+
         return entities.stream()
-                .map(UsuarioEntity::toDTO)
+                .map(this::convertEntityToDTO)
                 .collect(Collectors.toList());
     }
 
     public void deletarUsuario(Long id) {
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)); // Mesma coisa, alterar a Exception né
+                .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado com o ID: " + id));
 
         usuarioRepository.delete(usuarioExistente);
     }
 
     public UserScoreDTO getUserScoreById(Long id) {
         UsuarioEntity usuarioEntity = usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)); // Mesma coisa, alterar a Exception né
+                .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado com o ID: " + id));
 
         int score = scoreApiClient.getScore(usuarioEntity.getCpf());
 
         return new UserScoreDTO(usuarioEntity.getId(), score);
     }
 
-    private EnderecoEntity buscaEnderecoPorCep(String cep) { // pra que se nao usa?  e se usar de forma isolada nao era pra esar na Service do Endereco?
-        return buscaCepClient.buscarEnderecoPorCep(cep);
-    }
-
-    private int obterScorePorCpf(String cpf) { // pra que se nao usa? e se usar de forma isolada nao era pra esar na Service do Score?
-        return scoreApiClient.getScore(cpf);
-    }
-
 
     public UsuarioDTO convertEntityToDTO(UsuarioEntity usuarioEntity) {
         EnderecoEntity endereco = usuarioEntity.getEndereco();
-        return new UsuarioDTO( // usar eesse metodo dentor da Enity toDTO ou Classe Translator.
+        return new UsuarioDTO(
                 usuarioEntity.getId(),
                 usuarioEntity.getNome(),
                 usuarioEntity.getEmail(),
@@ -133,7 +135,7 @@ public class UsuarioService {
         );
     }
 
-    private EnderecoDTO convertEnderecoToDTO(EnderecoEntity enderecoEntity) {  // mesma coisa.
+    private EnderecoDTO convertEnderecoToDTO(EnderecoEntity enderecoEntity) {
         return new EnderecoDTO(
                 enderecoEntity.getId(),
                 enderecoEntity.getCep(),

@@ -39,7 +39,7 @@ public class SecutiryConfiguration {
                 .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers(POST, "/auth/login").permitAll()
-                        .requestMatchers(POST, "/user/register").permitAll()
+                        .requestMatchers(POST, "/user/cadastrar").permitAll()
                         .requestMatchers(DELETE, "/user").hasRole("ADMIN")
                         .requestMatchers(AUTH_WHITE_LIST).permitAll()
                         .anyRequest().authenticated())

@@ -79,7 +79,7 @@ public class UsuarioEntity implements UserDetails {
         return true;
     }
 
-    public UsuarioDTO toDTO() {
+    public UsuarioDTO convertEntityToDTO() {
         return new UsuarioDTO(
                 this.id,
                 this.nome,
@@ -88,8 +88,7 @@ public class UsuarioEntity implements UserDetails {
                 this.cpf,
                 this.cep,
                 this.score,
-                null
+               this.endereco != null ?this.endereco.toDTO() : null
         );
     }
-
 }

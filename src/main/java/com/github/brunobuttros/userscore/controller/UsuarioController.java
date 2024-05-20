@@ -1,6 +1,6 @@
 package com.github.brunobuttros.userscore.controller;
 
-import com.github.brunobuttros.userscore.dto.RegisterDTO;
+import com.github.brunobuttros.userscore.dto.CadastrarDTO;
 import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
@@ -34,9 +34,15 @@ public class UsuarioController {
     @Autowired
     private BuscaCepClient buscaCepClient;
 
-    @PostMapping("/register")
-    public ResponseEntity register(@RequestBody @Validated RegisterDTO data) {
-        return usuarioService.register(data);
+    @PostMapping("/cadastrar")
+    public ResponseEntity<UsuarioDTO> cadastrar(@RequestBody @Validated CadastrarDTO data) {
+        try {
+            UsuarioEntity novoUsuario = usuarioService.cadastrar(data);
+            UsuarioDTO usuarioDTO = usuarioService.convertEntityToDTO(novoUsuario);
+            return ResponseEntity.status(HttpStatus.CREATED).body(usuarioDTO);
+        } catch (IllegalArgumentException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+        }
     }
 
 
