@@ -3,6 +3,8 @@ package com.github.brunobuttros.userscore.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.exceptions.CepInvalidoException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestClientException;
@@ -12,6 +14,8 @@ import java.io.IOException;
 
 @Service
 public class BuscaCepClient {
+    private static final Logger logger = LoggerFactory.getLogger(BuscaCepClient.class);
+
 
     @Value("${viacep.url}")
     private String viaCepUrl;
@@ -25,6 +29,7 @@ public class BuscaCepClient {
     }
 
     public EnderecoEntity buscarEnderecoPorCep(String cep) {
+        logger.info("Buscando endereço para o CEP: {}", cep);
         return buscarEndereco(cep);
     }
 

@@ -6,7 +6,8 @@ import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
-import com.github.brunobuttros.userscore.exceptions.UsuarioNotFoundException;
+import com.github.brunobuttros.userscore.exceptions.LoginOuCPFJaExistenteException;
+import com.github.brunobuttros.userscore.exceptions.UserIDNotFoundException;
 import com.github.brunobuttros.userscore.repository.EnderecoRepository;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import org.slf4j.Logger;
@@ -38,8 +39,9 @@ public class UsuarioService {
     }
 
     public UsuarioEntity cadastrar(CadastrarDTO data) {
+        logger.debug("Iniciando cadastro de usuário com login: {}", data.login());
         if (usuarioRepository.existsByLogin(data.login()) || usuarioRepository.existsByCpf(data.cpf())) {
-            throw new IllegalArgumentException("Usuário com login ou CPF já existente.");
+            throw new LoginOuCPFJaExistenteException("Usuário com login ou CPF já existente.");
         }
 
         int score = scoreApiClient.getScore(data.cpf());
@@ -59,9 +61,9 @@ public class UsuarioService {
     }
 
     public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
-;
+        logger.debug("Iniciando atualização do usuário com ID: {}", id);
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
-                .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado com o ID: " + id));
+                .orElseThrow(() -> new UserIDNotFoundException("Usuário não encontrado com o ID: " + id));
 
         if (usuarioDTO.email() != null && !usuarioDTO.email().equals(usuarioExistente.getEmail())) {
             usuarioExistente.setEmail(usuarioDTO.email());
@@ -105,21 +107,27 @@ public class UsuarioService {
     }
 
     public void deletarUsuario(Long id) {
+        logger.debug("Iniciando deleção do usuário com ID: {}", id);
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
-                .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado com o ID: " + id));
+                .orElseThrow(() -> {
+                    logger.error("Usuário não encontrado com o ID: {}", id);
+                    return new UserIDNotFoundException("Usuário não encontrado com o ID: " + id);
+                });
 
         usuarioRepository.delete(usuarioExistente);
     }
 
     public UserScoreDTO getUserScoreById(Long id) {
+        logger.debug("Iniciando obtenção do score do usuário com ID: {}", id);
         UsuarioEntity usuarioEntity = usuarioRepository.findById(id)
-                .orElseThrow(() -> new UsuarioNotFoundException("Usuário não encontrado com o ID: " + id));
+                .orElseThrow(() -> {
+                    return new UserIDNotFoundException("Usuário não encontrado com o ID: " + id);
+                });
 
         int score = scoreApiClient.getScore(usuarioEntity.getCpf());
 
         return new UserScoreDTO(usuarioEntity.getId(), score);
     }
-
 
     public UsuarioDTO convertEntityToDTO(UsuarioEntity usuarioEntity) {
         EnderecoEntity endereco = usuarioEntity.getEndereco();
