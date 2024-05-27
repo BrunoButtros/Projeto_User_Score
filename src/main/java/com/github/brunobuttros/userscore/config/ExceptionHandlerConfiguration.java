@@ -1,4 +1,4 @@
-package com.github.brunobuttros.userscore.exception;
+package com.github.brunobuttros.userscore.config;
 
 import com.github.brunobuttros.userscore.dto.ErrorResponseDTO;
 import com.github.brunobuttros.userscore.exceptions.*;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.LocalDateTime;
 
 @RestControllerAdvice
-public class CustomExceptionHandler {
-    private static final Logger logger = LoggerFactory.getLogger(CustomExceptionHandler.class);
+public class ExceptionHandlerConfiguration {
+    private static final Logger logger = LoggerFactory.getLogger(ExceptionHandlerConfiguration.class);
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponseDTO> handleException(Exception ex) {
@@ -32,7 +32,7 @@ public class CustomExceptionHandler {
 
     @ExceptionHandler(UserIDNotFoundException.class)
     public ResponseEntity<ErrorResponseDTO> handleUserIDNotFoundException(UserIDNotFoundException ex) {
-        logger.error("Id do usuario não foi encontrado: {}", ex.getMessage());
+        logger.error("Id do usuário não foi encontrado: {}", ex.getMessage());
         ErrorResponseDTO errorResponse = new ErrorResponseDTO(LocalDateTime.now(),ex.getMessage());
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorResponse);
     }

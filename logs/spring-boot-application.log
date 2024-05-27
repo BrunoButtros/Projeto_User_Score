@@ -3100,3 +3100,6 @@ Caused by: java.lang.ClassNotFoundException: com.github.brunobuttros.userscore.s
 2024-05-25 23:08:05 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
 2024-05-25 23:08:05 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
 2024-05-25 23:08:05 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-05-25 23:11:53 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-25 23:11:53 - HikariPool-47 - Shutdown initiated...
+2024-05-25 23:11:53 - HikariPool-47 - Shutdown completed.
