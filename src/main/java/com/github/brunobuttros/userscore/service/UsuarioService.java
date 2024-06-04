@@ -1,74 +1,132 @@
 package com.github.brunobuttros.userscore.service;
 
+import com.github.brunobuttros.userscore.dto.CadastrarDTO;
 import com.github.brunobuttros.userscore.dto.EnderecoDTO;
+import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
+import com.github.brunobuttros.userscore.exceptions.LoginOuCPFJaExistenteException;
+import com.github.brunobuttros.userscore.exceptions.UserIDNotFoundException;
+import com.github.brunobuttros.userscore.repository.EnderecoRepository;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class UsuarioService {
+    private static final Logger logger = LoggerFactory.getLogger(UsuarioService.class);
 
     private final UsuarioRepository usuarioRepository;
-    private final BuscaCep buscaCep;
+    private final BuscaCepClient buscaCepClient;
     private final ScoreApiClient scoreApiClient;
+    private final EnderecoRepository enderecoRepository;
 
-    @Autowired
-    public UsuarioService(UsuarioRepository usuarioRepository, BuscaCep buscaCep, ScoreApiClient scoreApiClient) {
+
+    public UsuarioService(UsuarioRepository usuarioRepository,
+                          BuscaCepClient buscaCepClient,
+                          ScoreApiClient scoreApiClient,
+                          EnderecoRepository enderecoRepository) {
         this.usuarioRepository = usuarioRepository;
-        this.buscaCep = buscaCep;
+        this.buscaCepClient = buscaCepClient;
         this.scoreApiClient = scoreApiClient;
+        this.enderecoRepository = enderecoRepository;
     }
 
-    public UsuarioEntity cadastrarUsuario(UsuarioDTO usuarioDTO) {
-        int score = scoreApiClient.getScore(usuarioDTO.cpf());
+    public UsuarioEntity cadastrar(CadastrarDTO data) {
+        logger.debug("Iniciando cadastro de usuário com login: {}", data.login());
+        if (usuarioRepository.existsByLogin(data.login()) || usuarioRepository.existsByCpf(data.cpf())) {
+            throw new LoginOuCPFJaExistenteException("Usuário com login ou CPF já existente.");
+        }
 
-        EnderecoEntity enderecoEntity = buscaCep.buscarEnderecoPorCep(usuarioDTO.cep());
+        int score = scoreApiClient.getScore(data.cpf());
+        EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(data.cep());
 
-        UsuarioEntity usuarioEntity = new UsuarioEntity();
-        usuarioEntity.setNome(usuarioDTO.nome());
-        usuarioEntity.setEmail(usuarioDTO.email());
-        usuarioEntity.setTelefone(usuarioDTO.telefone());
-        usuarioEntity.setCpf(usuarioDTO.cpf());
-        usuarioEntity.setCep(usuarioDTO.cep());
-        usuarioEntity.setScore(score);
-        usuarioEntity.setEndereco(enderecoEntity);
+        String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
+        UsuarioEntity novoUsuario = new UsuarioEntity(data.login(), encryptedPassword, data.role());
+        novoUsuario.setNome(data.nome());
+        novoUsuario.setEmail(data.email());
+        novoUsuario.setCpf(data.cpf());
+        novoUsuario.setTelefone(data.telefone());
+        novoUsuario.setCep(data.cep());
+        novoUsuario.setScore(score);
+        novoUsuario.setEndereco(enderecoEntity);
 
-        return usuarioRepository.save(usuarioEntity);
+        return usuarioRepository.save(novoUsuario);
     }
 
     public UsuarioEntity atualizarUsuario(Long id, UsuarioDTO usuarioDTO) {
+        logger.debug("Iniciando atualização do usuário com ID: {}", id);
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
+                .orElseThrow(() -> new UserIDNotFoundException("Usuário não encontrado com o ID: " + id));
 
-        usuarioExistente.setNome(usuarioDTO.nome());
-        usuarioExistente.setEmail(usuarioDTO.email());
-        usuarioExistente.setTelefone(usuarioDTO.telefone());
-        usuarioExistente.setCpf(usuarioDTO.cpf());
-        usuarioExistente.setCep(usuarioDTO.cep());
+        if (usuarioDTO.email() != null && !usuarioDTO.email().equals(usuarioExistente.getEmail())) {
+            usuarioExistente.setEmail(usuarioDTO.email());
+        }
+        if (usuarioDTO.telefone() != null && !usuarioDTO.telefone().equals(usuarioExistente.getTelefone())) {
+            usuarioExistente.setTelefone(usuarioDTO.telefone());
+        }
+        if (usuarioDTO.cep() != null && !usuarioDTO.cep().equals(usuarioExistente.getCep())) {
+            EnderecoEntity enderecoExistente = enderecoRepository.findByCep(usuarioDTO.cep());
+            if (enderecoExistente != null) {
+                usuarioExistente.setEndereco(enderecoExistente);
+            } else {
+                EnderecoEntity enderecoEntity = buscaCepClient.buscarEnderecoPorCep(usuarioDTO.cep());
+                usuarioExistente.setEndereco(enderecoEntity);
+            }
+            usuarioExistente.setCep(usuarioDTO.cep());
+        }
 
         int score = scoreApiClient.getScore(usuarioDTO.cpf());
         usuarioExistente.setScore(score);
 
-        EnderecoEntity enderecoExistente = usuarioExistente.getEndereco();
-        if (enderecoExistente == null || !enderecoExistente.getCep().equals(usuarioDTO.cep())) {
-            EnderecoEntity enderecoEntity = buscaCep.buscarEnderecoPorCep(usuarioDTO.cep());
-            usuarioExistente.setEndereco(enderecoEntity);
-        }
+        usuarioRepository.save(usuarioExistente);
+        return usuarioExistente;
+    }
 
-        return usuarioRepository.save(usuarioExistente);
+    public List<UsuarioDTO> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
+        logger.info("Buscando usuários com os parâmetros - id: {}, nome: {}, email: {}, telefone: {}, cpf: {}", id, nome, email, telefone, cpf);
+
+        List<UsuarioEntity> entities;
+
+        if (id == null && nome == null && email == null && telefone == null && cpf == null) {
+            entities = usuarioRepository.findAll();
+        } else {
+            entities = usuarioRepository.findByIdOrNomeOrEmailOrTelefoneOrCpf(id, nome, email, telefone, cpf);
+        }
+        logger.info("Número de usuários encontrados: {}", entities.size());
+
+        return entities.stream()
+                .map(this::convertEntityToDTO)
+                .collect(Collectors.toList());
     }
 
     public void deletarUsuario(Long id) {
+        logger.debug("Iniciando deleção do usuário com ID: {}", id);
         UsuarioEntity usuarioExistente = usuarioRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id));
+                .orElseThrow(() -> {
+                    logger.error("Usuário não encontrado com o ID: {}", id);
+                    return new UserIDNotFoundException("Usuário não encontrado com o ID: " + id);
+                });
 
         usuarioRepository.delete(usuarioExistente);
+    }
+
+    public UserScoreDTO getUserScoreById(Long id) {
+        logger.debug("Iniciando obtenção do score do usuário com ID: {}", id);
+        UsuarioEntity usuarioEntity = usuarioRepository.findById(id)
+                .orElseThrow(() -> {
+                    return new UserIDNotFoundException("Usuário não encontrado com o ID: " + id);
+                });
+
+        int score = scoreApiClient.getScore(usuarioEntity.getCpf());
+
+        return new UserScoreDTO(usuarioEntity.getId(), score);
     }
 
     public UsuarioDTO convertEntityToDTO(UsuarioEntity usuarioEntity) {
@@ -94,30 +152,5 @@ public class UsuarioService {
                 enderecoEntity.getLocalidade(),
                 enderecoEntity.getUf()
         );
-    }
-
-    private EnderecoEntity buscaEnderecoPorCep(String cep) {
-        return buscaCep.buscarEnderecoPorCep(cep);
-    }
-
-    private int obterScorePorCpf(String cpf) {
-        return scoreApiClient.getScore(cpf);
-    }
-
-    public List<UsuarioEntity> buscarUsuarios(Long id, String nome, String email, String telefone, String cpf) {
-        if (id != null) {
-            return Collections.singletonList(usuarioRepository.findById(id)
-                    .orElseThrow(() -> new RuntimeException("Usuário não encontrado com o ID: " + id)));
-        } else if (nome != null) {
-            return usuarioRepository.findByNome(nome);
-        } else if (email != null) {
-            return usuarioRepository.findByEmail(email);
-        } else if (telefone != null) {
-            return usuarioRepository.findByTelefone(telefone);
-        } else if (cpf != null) {
-            return usuarioRepository.findByCpf(cpf);
-        } else {
-            return usuarioRepository.findAll();
-        }
     }
 }

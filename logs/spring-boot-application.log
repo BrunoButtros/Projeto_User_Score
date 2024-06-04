@@ -1,0 +1,56 @@
+2024-05-27 11:12:54 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 11612 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-05-27 11:12:54 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-05-27 11:12:54 - No active profile set, falling back to 1 default profile: "default"
+2024-05-27 11:12:54 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-05-27 11:12:54 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-05-27 11:12:56 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-05-27 11:12:56 - Finished Spring Data repository scanning in 75 ms. Found 2 JPA repository interfaces.
+2024-05-27 11:12:56 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-05-27 11:12:56 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-05-27 11:12:57 - Tomcat initialized with port 8080 (http)
+2024-05-27 11:12:57 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-05-27 11:12:57 - Starting service [Tomcat]
+2024-05-27 11:12:57 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-05-27 11:12:57 - Initializing Spring embedded WebApplicationContext
+2024-05-27 11:12:57 - Root WebApplicationContext: initialization completed in 2447 ms
+2024-05-27 11:12:57 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-05-27 11:12:57 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-05-27 11:12:57 - HHH000026: Second-level cache disabled
+2024-05-27 11:12:57 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-05-27 11:12:57 - HikariPool-1 - Starting...
+2024-05-27 11:12:58 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@23832626
+2024-05-27 11:12:58 - HikariPool-1 - Start completed.
+2024-05-27 11:12:59 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-05-27 11:12:59 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 11:13:00 - Filter 'securityFilter' configured for use
+2024-05-27 11:13:00 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-05-27 11:13:00 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2d588453, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@24851e55, org.springframework.security.web.context.SecurityContextHolderFilter@3cc25d4, org.springframework.security.web.header.HeaderWriterFilter@b752e4d, org.springframework.web.filter.CorsFilter@14b29542, org.springframework.security.web.authentication.logout.LogoutFilter@7b5aa44, com.github.brunobuttros.userscore.service.SecurityFilter@4a2b3d0b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@63f7de1f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@725ff4ba, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@12565ad6, org.springframework.security.web.session.SessionManagementFilter@606406ab, org.springframework.security.web.access.ExceptionTranslationFilter@7ea20f80, org.springframework.security.web.access.intercept.AuthorizationFilter@568bebf6]
+2024-05-27 11:13:01 - LiveReload server is running on port 35729
+2024-05-27 11:13:01 - Starting ProtocolHandler ["http-nio-8080"]
+2024-05-27 11:13:01 - Tomcat started on port 8080 (http) with context path ''
+2024-05-27 11:13:01 - Started ProjetoScoreApplication in 7.555 seconds (process running for 8.495)
+2024-05-27 11:13:01 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-05-27 11:13:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-05-27 11:13:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-05-27 11:13:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-05-27 11:13:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-05-27 11:13:01 - Unexpected error occurred in scheduled task
+com.github.brunobuttros.userscore.exceptions.ScoreApiException: Erro ao chamar a API de pontuação: I/O error on POST request for "http://localhost:8081/score": Connection refused: connect
+	at com.github.brunobuttros.userscore.service.ScoreApiClient.getScore(ScoreApiClient.java:48)
+	at com.github.brunobuttros.userscore.service.FileService.atualizarArquivoUsuariosPeriodicamente(FileService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-05-27 11:17:42 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-05-27 11:17:42 - HikariPool-1 - Shutdown initiated...
+2024-05-27 11:17:42 - HikariPool-1 - Shutdown completed.

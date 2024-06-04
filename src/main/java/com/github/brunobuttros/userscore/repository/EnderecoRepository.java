@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface EnderecoRepository extends JpaRepository<EnderecoEntity, Long> {
 
+    EnderecoEntity findByCep(String cep);
 }
