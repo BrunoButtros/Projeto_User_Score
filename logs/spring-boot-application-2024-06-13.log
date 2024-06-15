@@ -1,0 +1,429 @@
+2024-06-13 11:03:49 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 19288 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-13 11:03:49 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-13 11:03:49 - No active profile set, falling back to 1 default profile: "default"
+2024-06-13 11:03:49 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-13 11:03:49 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-13 11:03:51 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13 11:03:51 - Finished Spring Data repository scanning in 222 ms. Found 2 JPA repository interfaces.
+2024-06-13 11:03:52 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-13 11:03:52 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-13 11:03:53 - Tomcat initialized with port 8080 (http)
+2024-06-13 11:03:53 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:03:53 - Starting service [Tomcat]
+2024-06-13 11:03:53 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-13 11:03:53 - Initializing Spring embedded WebApplicationContext
+2024-06-13 11:03:53 - Root WebApplicationContext: initialization completed in 3454 ms
+2024-06-13 11:03:53 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13 11:03:53 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13 11:03:53 - HHH000026: Second-level cache disabled
+2024-06-13 11:03:54 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13 11:03:54 - HikariPool-1 - Starting...
+2024-06-13 11:03:54 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@341a6cbd
+2024-06-13 11:03:54 - HikariPool-1 - Start completed.
+2024-06-13 11:03:56 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13 11:03:56 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:03:56 - Filter 'securityFilter' configured for use
+2024-06-13 11:03:57 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13 11:03:57 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@4002a754, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6c9b0733, org.springframework.security.web.context.SecurityContextHolderFilter@13e8bd2b, org.springframework.security.web.header.HeaderWriterFilter@6ee1917b, org.springframework.web.filter.CorsFilter@563054e4, org.springframework.security.web.authentication.logout.LogoutFilter@310ff22, com.github.brunobuttros.userscore.service.SecurityFilter@7b9e3f5e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5db0988f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2412b339, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d331e1, org.springframework.security.web.session.SessionManagementFilter@2b900b9d, org.springframework.security.web.access.ExceptionTranslationFilter@526ab8de, org.springframework.security.web.access.intercept.AuthorizationFilter@5e5e5d6a]
+2024-06-13 11:03:58 - LiveReload server is running on port 35729
+2024-06-13 11:03:58 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:03:58 - Tomcat started on port 8080 (http) with context path ''
+2024-06-13 11:03:58 - Started ProjetoScoreApplication in 9.377 seconds (process running for 10.306)
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:03:58 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:03:58 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:03:58 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:03:58 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:03:58 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:03:58 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:03:58 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:04:10 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-13 11:04:10 - Initializing Servlet 'dispatcherServlet'
+2024-06-13 11:04:10 - Completed initialization in 1 ms
+2024-06-13 11:04:10 - Carregando informações do usuário com nome de usuário: Logi4
+2024-06-13 11:04:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 where ue1_0.login=?
+2024-06-13 11:04:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:04:10 - Informações do usuário carregadas com sucesso.
+2024-06-13 11:12:19 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:12:19 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:12:19 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:12:19 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:12:19 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:12:19 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:12:20 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:12:20 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:40 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:20:40 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:20:40 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:20:40 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:20:40 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:20:40 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:20:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:20:41 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:01 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:29:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:29:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:29:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:29:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:29:01 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:29:02 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:29:02 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:29:02 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:29:02 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:29:02 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:29:02 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:29:02 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:29:02 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:23 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:37:23 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:37:23 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:37:23 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:37:23 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:37:23 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:37:23 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:23 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:37:23 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:23 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:37:23 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:23 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:37:23 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:37:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:37:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:37:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:37:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:37:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:45:44 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:45:44 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:45:44 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:45:44 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:45:44 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:45:44 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:45:44 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:29 - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-06-13 11:52:29 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:52:30 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:52:30 - HikariPool-1 - Shutdown initiated...
+2024-06-13 11:52:30 - HikariPool-1 - Shutdown completed.
+2024-06-13 11:52:31 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 19288 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-13 11:52:31 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-13 11:52:31 - No active profile set, falling back to 1 default profile: "default"
+2024-06-13 11:52:32 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13 11:52:32 - Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2024-06-13 11:52:32 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-13 11:52:32 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-13 11:52:32 - Tomcat initialized with port 8080 (http)
+2024-06-13 11:52:32 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:52:32 - Starting service [Tomcat]
+2024-06-13 11:52:32 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-13 11:52:32 - Initializing Spring embedded WebApplicationContext
+2024-06-13 11:52:32 - Root WebApplicationContext: initialization completed in 1165 ms
+2024-06-13 11:52:33 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13 11:52:33 - HHH000026: Second-level cache disabled
+2024-06-13 11:52:33 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13 11:52:33 - HikariPool-2 - Starting...
+2024-06-13 11:52:33 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c9702d5
+2024-06-13 11:52:33 - HikariPool-2 - Start completed.
+2024-06-13 11:52:33 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13 11:52:33 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:52:33 - Filter 'securityFilter' configured for use
+2024-06-13 11:52:33 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13 11:52:33 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@27176838, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1c9fae71, org.springframework.security.web.context.SecurityContextHolderFilter@60312f54, org.springframework.security.web.header.HeaderWriterFilter@506c3c87, org.springframework.web.filter.CorsFilter@236575fd, org.springframework.security.web.authentication.logout.LogoutFilter@1902f3f9, com.github.brunobuttros.userscore.service.SecurityFilter@1e09102b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17c4afc9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@26fd21b2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2c30a040, org.springframework.security.web.session.SessionManagementFilter@26a85326, org.springframework.security.web.access.ExceptionTranslationFilter@62b2b605, org.springframework.security.web.access.intercept.AuthorizationFilter@2904dbda]
+2024-06-13 11:52:33 - LiveReload server is running on port 35729
+2024-06-13 11:52:33 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:52:33 - Tomcat started on port 8080 (http) with context path ''
+2024-06-13 11:52:33 - Started ProjetoScoreApplication in 2.129 seconds (process running for 2925.786)
+2024-06-13 11:52:33 - Condition evaluation unchanged
+2024-06-13 11:52:33 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:52:33 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:33 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:33 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:33 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:33 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:33 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:33 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:33 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:33 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:34 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:34 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:34 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:34 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:34 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:34 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:34 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:34 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:34 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:34 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:34 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:34 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:35 - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-06-13 11:52:35 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:52:35 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:52:35 - HikariPool-2 - Shutdown initiated...
+2024-06-13 11:52:35 - HikariPool-2 - Shutdown completed.
+2024-06-13 11:52:35 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 19288 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-13 11:52:35 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-13 11:52:35 - No active profile set, falling back to 1 default profile: "default"
+2024-06-13 11:52:35 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13 11:52:35 - Finished Spring Data repository scanning in 14 ms. Found 2 JPA repository interfaces.
+2024-06-13 11:52:35 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-13 11:52:35 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-13 11:52:35 - Tomcat initialized with port 8080 (http)
+2024-06-13 11:52:35 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:52:35 - Starting service [Tomcat]
+2024-06-13 11:52:35 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-13 11:52:35 - Initializing Spring embedded WebApplicationContext
+2024-06-13 11:52:35 - Root WebApplicationContext: initialization completed in 508 ms
+2024-06-13 11:52:35 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13 11:52:35 - HHH000026: Second-level cache disabled
+2024-06-13 11:52:35 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13 11:52:35 - HikariPool-3 - Starting...
+2024-06-13 11:52:35 - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@765c194c
+2024-06-13 11:52:35 - HikariPool-3 - Start completed.
+2024-06-13 11:52:35 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13 11:52:35 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:52:36 - Filter 'securityFilter' configured for use
+2024-06-13 11:52:36 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13 11:52:36 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7649e42, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@20dc9bab, org.springframework.security.web.context.SecurityContextHolderFilter@bf90a3f, org.springframework.security.web.header.HeaderWriterFilter@2cc0328d, org.springframework.web.filter.CorsFilter@64bbc081, org.springframework.security.web.authentication.logout.LogoutFilter@5c8f720f, com.github.brunobuttros.userscore.service.SecurityFilter@58c62c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2a6c310, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2fdfcd93, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@66a6f42a, org.springframework.security.web.session.SessionManagementFilter@404e08be, org.springframework.security.web.access.ExceptionTranslationFilter@2e24fe5e, org.springframework.security.web.access.intercept.AuthorizationFilter@39676f0b]
+2024-06-13 11:52:36 - LiveReload server is running on port 35729
+2024-06-13 11:52:36 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-13 11:52:36 - Tomcat started on port 8080 (http) with context path ''
+2024-06-13 11:52:36 - Started ProjetoScoreApplication in 1.0 seconds (process running for 2928.308)
+2024-06-13 11:52:36 - Condition evaluation unchanged
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 11:52:36 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:36 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:36 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:36 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:36 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:52:36 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 11:52:36 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 11:55:16 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 11:55:16 - HikariPool-3 - Shutdown initiated...
+2024-06-13 11:55:16 - HikariPool-3 - Shutdown completed.
+2024-06-13 22:35:00 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 8372 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-13 22:35:00 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-13 22:35:00 - No active profile set, falling back to 1 default profile: "default"
+2024-06-13 22:35:00 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-13 22:35:00 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-13 22:35:01 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-13 22:35:01 - Finished Spring Data repository scanning in 60 ms. Found 2 JPA repository interfaces.
+2024-06-13 22:35:01 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-13 22:35:01 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-13 22:35:02 - Tomcat initialized with port 8080 (http)
+2024-06-13 22:35:02 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-13 22:35:02 - Starting service [Tomcat]
+2024-06-13 22:35:02 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-13 22:35:02 - Initializing Spring embedded WebApplicationContext
+2024-06-13 22:35:02 - Root WebApplicationContext: initialization completed in 1992 ms
+2024-06-13 22:35:02 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-13 22:35:02 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-13 22:35:02 - HHH000026: Second-level cache disabled
+2024-06-13 22:35:02 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-13 22:35:02 - HikariPool-1 - Starting...
+2024-06-13 22:35:03 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a7c194b
+2024-06-13 22:35:03 - HikariPool-1 - Start completed.
+2024-06-13 22:35:04 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-13 22:35:04 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 22:35:05 - Filter 'securityFilter' configured for use
+2024-06-13 22:35:05 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-13 22:35:05 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5cdb472d, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2d588453, org.springframework.security.web.context.SecurityContextHolderFilter@c43bf44, org.springframework.security.web.header.HeaderWriterFilter@4ceaf3cf, org.springframework.web.filter.CorsFilter@24851e55, org.springframework.security.web.authentication.logout.LogoutFilter@5e24b175, com.github.brunobuttros.userscore.service.SecurityFilter@77665d91, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@43dd2a58, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@63f7de1f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@14b29542, org.springframework.security.web.session.SessionManagementFilter@4f980303, org.springframework.security.web.access.ExceptionTranslationFilter@70f7836b, org.springframework.security.web.access.intercept.AuthorizationFilter@536452cf]
+2024-06-13 22:35:06 - LiveReload server is running on port 35729
+2024-06-13 22:35:06 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-13 22:35:06 - Tomcat started on port 8080 (http) with context path ''
+2024-06-13 22:35:06 - Started ProjetoScoreApplication in 6.676 seconds (process running for 7.434)
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 22:35:06 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:35:06 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:35:06 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:35:06 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:35:06 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:35:06 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:35:06 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:26 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 22:43:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:43:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:43:27 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:43:27 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:43:27 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:43:27 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:43:27 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 22:51:47 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:51:47 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:51:47 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:51:47 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:51:47 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 22:51:47 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 22:51:47 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:03:45 - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5m12s61ms321µs400ns).
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 23:04:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:04:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:04:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:04:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:04:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:04:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:04:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-13 23:13:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:13:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:13:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:13:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:13:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-13 23:13:10 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-13 23:13:31 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-13 23:13:31 - HikariPool-1 - Shutdown initiated...
+2024-06-13 23:13:31 - HikariPool-1 - Shutdown completed.

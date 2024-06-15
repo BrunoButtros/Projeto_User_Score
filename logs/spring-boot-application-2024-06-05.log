@@ -1,0 +1,604 @@
+2024-06-05 19:47:05 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 19704 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:47:05 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:47:05 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:47:05 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-05 19:47:05 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-05 19:47:06 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05 19:47:06 - Finished Spring Data repository scanning in 51 ms. Found 2 JPA repository interfaces.
+2024-06-05 19:47:07 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-05 19:47:07 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-05 19:47:07 - Tomcat initialized with port 8080 (http)
+2024-06-05 19:47:07 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:47:07 - Starting service [Tomcat]
+2024-06-05 19:47:07 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-05 19:47:07 - Initializing Spring embedded WebApplicationContext
+2024-06-05 19:47:07 - Root WebApplicationContext: initialization completed in 1759 ms
+2024-06-05 19:47:07 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05 19:47:07 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-05 19:47:07 - HHH000026: Second-level cache disabled
+2024-06-05 19:47:07 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05 19:47:07 - HikariPool-1 - Starting...
+2024-06-05 19:47:08 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@793d55e1
+2024-06-05 19:47:08 - HikariPool-1 - Start completed.
+2024-06-05 19:47:09 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05 19:47:09 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:47:09 - Filter 'securityFilter' configured for use
+2024-06-05 19:47:10 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05 19:47:10 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2987bec, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fdfa4d6, org.springframework.security.web.context.SecurityContextHolderFilter@ee463df, org.springframework.security.web.header.HeaderWriterFilter@50402212, org.springframework.web.filter.CorsFilter@f89a720, org.springframework.security.web.authentication.logout.LogoutFilter@2e73527f, com.github.brunobuttros.userscore.service.SecurityFilter@5aba849d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3277ded8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@125acc5e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@54da400a, org.springframework.security.web.session.SessionManagementFilter@3ce888c4, org.springframework.security.web.access.ExceptionTranslationFilter@35e4781f, org.springframework.security.web.access.intercept.AuthorizationFilter@6e1656c]
+2024-06-05 19:47:10 - LiveReload server is running on port 35729
+2024-06-05 19:47:10 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:47:10 - Tomcat started on port 8080 (http) with context path ''
+2024-06-05 19:47:10 - Started ProjetoScoreApplication in 5.479 seconds (process running for 5.95)
+2024-06-05 19:47:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-05 19:47:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:47:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:47:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:47:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:47:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:47:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:47:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:47:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:47:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:47:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:47:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:47:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:47:13 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 19:47:13 - Initializing Servlet 'dispatcherServlet'
+2024-06-05 19:47:13 - Completed initialization in 1 ms
+2024-06-05 19:49:12 - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-06-05 19:49:12 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:12 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:49:12 - HikariPool-1 - Shutdown initiated...
+2024-06-05 19:49:12 - HikariPool-1 - Shutdown completed.
+2024-06-05 19:49:12 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 19704 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:49:12 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:49:12 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:49:12 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05 19:49:12 - Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2024-06-05 19:49:12 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-05 19:49:12 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-05 19:49:12 - Tomcat initialized with port 8080 (http)
+2024-06-05 19:49:12 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:12 - Starting service [Tomcat]
+2024-06-05 19:49:12 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-05 19:49:12 - Initializing Spring embedded WebApplicationContext
+2024-06-05 19:49:12 - Root WebApplicationContext: initialization completed in 501 ms
+2024-06-05 19:49:12 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05 19:49:12 - HHH000026: Second-level cache disabled
+2024-06-05 19:49:12 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05 19:49:12 - HikariPool-2 - Starting...
+2024-06-05 19:49:12 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c91454d
+2024-06-05 19:49:12 - HikariPool-2 - Start completed.
+2024-06-05 19:49:12 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05 19:49:12 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:49:13 - Filter 'securityFilter' configured for use
+2024-06-05 19:49:13 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05 19:49:13 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@3ff2417f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@fbfe782, org.springframework.security.web.context.SecurityContextHolderFilter@4a401eb3, org.springframework.security.web.header.HeaderWriterFilter@629ec0dd, org.springframework.web.filter.CorsFilter@5ab59bae, org.springframework.security.web.authentication.logout.LogoutFilter@4ddfa45f, com.github.brunobuttros.userscore.service.SecurityFilter@2fc4c55, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48526bd6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5cdec229, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@f61e486, org.springframework.security.web.session.SessionManagementFilter@25bfd357, org.springframework.security.web.access.ExceptionTranslationFilter@35b6e4c1, org.springframework.security.web.access.intercept.AuthorizationFilter@3c6d3d9b]
+2024-06-05 19:49:13 - LiveReload server is running on port 35729
+2024-06-05 19:49:13 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:13 - Tomcat started on port 8080 (http) with context path ''
+2024-06-05 19:49:13 - Started ProjetoScoreApplication in 1.002 seconds (process running for 128.583)
+2024-06-05 19:49:13 - Condition evaluation unchanged
+2024-06-05 19:49:13 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-05 19:49:13 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:13 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:13 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:13 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:13 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 19:49:13 - Initializing Servlet 'dispatcherServlet'
+2024-06-05 19:49:13 - Completed initialization in 1 ms
+2024-06-05 19:49:13 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:13 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:13 - Ocorreu uma exceção não tratada:
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource UserController.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.github.brunobuttros.userscore.service.SecurityFilter.doFilterInternal(SecurityFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-05 19:49:13 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:13 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:13 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource UserController.]
+2024-06-05 19:49:13 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:13 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:13 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:13 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:14 - Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2024-06-05 19:49:14 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:14 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:49:14 - HikariPool-2 - Shutdown initiated...
+2024-06-05 19:49:14 - HikariPool-2 - Shutdown completed.
+2024-06-05 19:49:14 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 19704 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:49:14 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:49:14 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:49:14 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05 19:49:14 - Finished Spring Data repository scanning in 13 ms. Found 2 JPA repository interfaces.
+2024-06-05 19:49:14 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-05 19:49:14 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-05 19:49:15 - Tomcat initialized with port 8080 (http)
+2024-06-05 19:49:15 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:15 - Starting service [Tomcat]
+2024-06-05 19:49:15 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-05 19:49:15 - Initializing Spring embedded WebApplicationContext
+2024-06-05 19:49:15 - Root WebApplicationContext: initialization completed in 293 ms
+2024-06-05 19:49:15 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05 19:49:15 - HHH000026: Second-level cache disabled
+2024-06-05 19:49:15 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05 19:49:15 - HikariPool-3 - Starting...
+2024-06-05 19:49:15 - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ef83a6a
+2024-06-05 19:49:15 - HikariPool-3 - Start completed.
+2024-06-05 19:49:15 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05 19:49:15 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:49:15 - Filter 'securityFilter' configured for use
+2024-06-05 19:49:15 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05 19:49:15 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@31b3e7b0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d30558a, org.springframework.security.web.context.SecurityContextHolderFilter@3b01f455, org.springframework.security.web.header.HeaderWriterFilter@7b8dad43, org.springframework.web.filter.CorsFilter@552d3a33, org.springframework.security.web.authentication.logout.LogoutFilter@7ac4c377, com.github.brunobuttros.userscore.service.SecurityFilter@2caaa1c2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2473d25d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32828425, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6307acd4, org.springframework.security.web.session.SessionManagementFilter@223bd2db, org.springframework.security.web.access.ExceptionTranslationFilter@5c087cb4, org.springframework.security.web.access.intercept.AuthorizationFilter@661a00d2]
+2024-06-05 19:49:15 - LiveReload server is running on port 35729
+2024-06-05 19:49:15 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:15 - Tomcat started on port 8080 (http) with context path ''
+2024-06-05 19:49:15 - Started ProjetoScoreApplication in 0.666 seconds (process running for 130.718)
+2024-06-05 19:49:15 - Condition evaluation unchanged
+2024-06-05 19:49:15 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-05 19:49:15 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:15 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:15 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:15 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:15 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:15 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:15 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:15 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:15 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:15 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:15 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:15 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:30 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:49:30 - HikariPool-3 - Shutdown initiated...
+2024-06-05 19:49:30 - HikariPool-3 - Shutdown completed.
+2024-06-05 19:49:32 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 17616 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:49:32 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:49:32 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:49:32 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-05 19:49:32 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-05 19:49:33 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05 19:49:33 - Finished Spring Data repository scanning in 43 ms. Found 2 JPA repository interfaces.
+2024-06-05 19:49:33 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-05 19:49:33 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-05 19:49:34 - Tomcat initialized with port 8080 (http)
+2024-06-05 19:49:34 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:34 - Starting service [Tomcat]
+2024-06-05 19:49:34 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-05 19:49:34 - Initializing Spring embedded WebApplicationContext
+2024-06-05 19:49:34 - Root WebApplicationContext: initialization completed in 1533 ms
+2024-06-05 19:49:34 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05 19:49:34 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-05 19:49:34 - HHH000026: Second-level cache disabled
+2024-06-05 19:49:34 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05 19:49:34 - HikariPool-1 - Starting...
+2024-06-05 19:49:34 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@39b3f31
+2024-06-05 19:49:34 - HikariPool-1 - Start completed.
+2024-06-05 19:49:35 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05 19:49:35 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:49:36 - Filter 'securityFilter' configured for use
+2024-06-05 19:49:36 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05 19:49:36 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@26b7cc6, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4a2a97f5, org.springframework.security.web.context.SecurityContextHolderFilter@91ff258, org.springframework.security.web.header.HeaderWriterFilter@3f347a1b, org.springframework.web.filter.CorsFilter@1b5c36c4, org.springframework.security.web.authentication.logout.LogoutFilter@eae0ea0, com.github.brunobuttros.userscore.service.SecurityFilter@7280b8d6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@691c4a34, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fc458e8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@148db86e, org.springframework.security.web.session.SessionManagementFilter@296bf580, org.springframework.security.web.access.ExceptionTranslationFilter@5b767ee2, org.springframework.security.web.access.intercept.AuthorizationFilter@499821c]
+2024-06-05 19:49:36 - LiveReload server is running on port 35729
+2024-06-05 19:49:36 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:49:36 - Tomcat started on port 8080 (http) with context path ''
+2024-06-05 19:49:36 - Started ProjetoScoreApplication in 4.819 seconds (process running for 5.329)
+2024-06-05 19:49:37 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-05 19:49:37 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:37 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:37 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:37 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:49:37 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:37 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:37 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:37 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:37 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:37 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:37 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:49:37 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:49:37 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 19:49:37 - Initializing Servlet 'dispatcherServlet'
+2024-06-05 19:49:37 - Completed initialization in 1 ms
+2024-06-05 19:49:37 - Ocorreu uma exceção não tratada:
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource UserController.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.github.brunobuttros.userscore.service.SecurityFilter.doFilterInternal(SecurityFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-05 19:49:37 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource UserController.]
+2024-06-05 19:51:22 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:51:22 - HikariPool-1 - Shutdown initiated...
+2024-06-05 19:51:22 - HikariPool-1 - Shutdown completed.
+2024-06-05 19:51:25 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 15204 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:51:25 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:51:25 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:51:25 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-05 19:51:25 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-05 19:51:26 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05 19:51:26 - Finished Spring Data repository scanning in 46 ms. Found 2 JPA repository interfaces.
+2024-06-05 19:51:27 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-05 19:51:27 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-05 19:51:27 - Tomcat initialized with port 8080 (http)
+2024-06-05 19:51:27 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:51:27 - Starting service [Tomcat]
+2024-06-05 19:51:27 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-05 19:51:27 - Initializing Spring embedded WebApplicationContext
+2024-06-05 19:51:27 - Root WebApplicationContext: initialization completed in 1641 ms
+2024-06-05 19:51:27 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05 19:51:27 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-05 19:51:27 - HHH000026: Second-level cache disabled
+2024-06-05 19:51:28 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05 19:51:28 - HikariPool-1 - Starting...
+2024-06-05 19:51:28 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@438676c
+2024-06-05 19:51:28 - HikariPool-1 - Start completed.
+2024-06-05 19:51:29 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05 19:51:29 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:51:29 - Filter 'securityFilter' configured for use
+2024-06-05 19:51:29 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05 19:51:30 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@29422eac, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@50f5bd22, org.springframework.security.web.context.SecurityContextHolderFilter@1b56cb3e, org.springframework.security.web.header.HeaderWriterFilter@24ee8045, org.springframework.web.filter.CorsFilter@56f1768a, org.springframework.security.web.authentication.logout.LogoutFilter@ad3e06d, com.github.brunobuttros.userscore.service.SecurityFilter@5fcced03, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@30120f27, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@23661029, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@13a69638, org.springframework.security.web.session.SessionManagementFilter@6fc458e8, org.springframework.security.web.access.ExceptionTranslationFilter@38dcc13, org.springframework.security.web.access.intercept.AuthorizationFilter@148db86e]
+2024-06-05 19:51:30 - LiveReload server is running on port 35729
+2024-06-05 19:51:30 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:51:30 - Tomcat started on port 8080 (http) with context path ''
+2024-06-05 19:51:30 - Started ProjetoScoreApplication in 5.071 seconds (process running for 5.551)
+2024-06-05 19:51:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-05 19:51:30 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:51:30 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:51:30 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:51:30 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:51:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:51:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:51:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:51:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:51:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:51:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:51:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:51:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:52:13 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-05 19:52:13 - Initializing Servlet 'dispatcherServlet'
+2024-06-05 19:52:13 - Completed initialization in 0 ms
+2024-06-05 19:52:51 - Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+2024-06-05 19:52:51 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:52:51 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:52:51 - HikariPool-1 - Shutdown initiated...
+2024-06-05 19:52:51 - HikariPool-1 - Shutdown completed.
+2024-06-05 19:52:51 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 15204 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:52:51 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:52:51 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:52:52 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05 19:52:52 - Finished Spring Data repository scanning in 10 ms. Found 2 JPA repository interfaces.
+2024-06-05 19:52:52 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-05 19:52:52 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-05 19:52:52 - Tomcat initialized with port 8080 (http)
+2024-06-05 19:52:52 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:52:52 - Starting service [Tomcat]
+2024-06-05 19:52:52 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-05 19:52:52 - Initializing Spring embedded WebApplicationContext
+2024-06-05 19:52:52 - Root WebApplicationContext: initialization completed in 378 ms
+2024-06-05 19:52:52 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05 19:52:52 - HHH000026: Second-level cache disabled
+2024-06-05 19:52:52 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05 19:52:52 - HikariPool-2 - Starting...
+2024-06-05 19:52:52 - HikariPool-2 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1c485b15
+2024-06-05 19:52:52 - HikariPool-2 - Start completed.
+2024-06-05 19:52:52 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05 19:52:52 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:52:52 - Filter 'securityFilter' configured for use
+2024-06-05 19:52:52 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-05 19:52:52 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@54cb2985, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d8e8fda, org.springframework.security.web.context.SecurityContextHolderFilter@49f2aab9, org.springframework.security.web.header.HeaderWriterFilter@6216a729, org.springframework.web.filter.CorsFilter@7894af3c, org.springframework.security.web.authentication.logout.LogoutFilter@7ef8e096, com.github.brunobuttros.userscore.service.SecurityFilter@5490b7fc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6cfcea76, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3b84272f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@48ea6816, org.springframework.security.web.session.SessionManagementFilter@1ea0e7cd, org.springframework.security.web.access.ExceptionTranslationFilter@5afffa93, org.springframework.security.web.access.intercept.AuthorizationFilter@6f7be6ae]
+2024-06-05 19:52:52 - LiveReload server is running on port 35729
+2024-06-05 19:52:52 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:52:52 - Tomcat started on port 8080 (http) with context path ''
+2024-06-05 19:52:52 - Started ProjetoScoreApplication in 0.908 seconds (process running for 87.747)
+2024-06-05 19:52:52 - Condition evaluation unchanged
+2024-06-05 19:52:52 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-05 19:52:52 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:52:52 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:52:52 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:52:52 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-05 19:52:52 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:52:52 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:52:52 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:52:52 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:52:52 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:52:52 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:52:52 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-05 19:52:52 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-05 19:59:07 - Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2024-06-05 19:59:07 - Stopping ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:59:07 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:59:07 - HikariPool-2 - Shutdown initiated...
+2024-06-05 19:59:07 - HikariPool-2 - Shutdown completed.
+2024-06-05 19:59:07 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 15204 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:59:07 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:59:07 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:59:07 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-05 19:59:07 - Finished Spring Data repository scanning in 10 ms. Found 2 JPA repository interfaces.
+2024-06-05 19:59:07 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-05 19:59:07 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-05 19:59:07 - Tomcat initialized with port 8080 (http)
+2024-06-05 19:59:07 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-05 19:59:07 - Starting service [Tomcat]
+2024-06-05 19:59:07 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-05 19:59:07 - Initializing Spring embedded WebApplicationContext
+2024-06-05 19:59:07 - Root WebApplicationContext: initialization completed in 349 ms
+2024-06-05 19:59:07 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-05 19:59:07 - HHH000026: Second-level cache disabled
+2024-06-05 19:59:07 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-05 19:59:07 - HikariPool-3 - Starting...
+2024-06-05 19:59:07 - HikariPool-3 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c0d83ff
+2024-06-05 19:59:07 - HikariPool-3 - Start completed.
+2024-06-05 19:59:07 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-05 19:59:07 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:59:07 - Filter 'securityFilter' configured for use
+2024-06-05 19:59:07 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authenticationController': Unsatisfied dependency expressed through field 'authenticationService': Error creating bean with name 'authenticationService': Unsatisfied dependency expressed through field 'authenticationManager': No qualifying bean of type 'org.springframework.security.authentication.AuthenticationManager' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2024-06-05 19:59:07 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-05 19:59:07 - HikariPool-3 - Shutdown initiated...
+2024-06-05 19:59:07 - HikariPool-3 - Shutdown completed.
+2024-06-05 19:59:07 - Stopping service [Tomcat]
+2024-06-05 19:59:07 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-05 19:59:07 - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field authenticationManager in com.github.brunobuttros.userscore.service.AuthenticationService required a bean of type 'org.springframework.security.authentication.AuthenticationManager' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'org.springframework.security.authentication.AuthenticationManager' in your configuration.
+
+2024-06-05 19:59:24 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 15204 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:59:24 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:59:24 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:59:24 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'configure' must not be declared as void; change the method's return type or its annotation.
+Offending resource: class path resource [com/github/brunobuttros/userscore/config/SecutiryConfiguration.class]
+2024-06-05 19:59:24 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-05 19:59:24 - Application run failed
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'configure' must not be declared as void; change the method's return type or its annotation.
+Offending resource: class path resource [com/github/brunobuttros/userscore/config/SecutiryConfiguration.class]
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:72)
+	at org.springframework.context.annotation.BeanMethod.validate(BeanMethod.java:47)
+	at org.springframework.context.annotation.ConfigurationClass.validate(ConfigurationClass.java:219)
+	at org.springframework.context.annotation.ConfigurationClassParser.validate(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:417)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.github.brunobuttros.userscore.ProjetoScoreApplication.main(ProjetoScoreApplication.java:12)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+2024-06-05 19:59:59 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 20140 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-05 19:59:59 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-05 19:59:59 - No active profile set, falling back to 1 default profile: "default"
+2024-06-05 19:59:59 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-05 19:59:59 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-05 19:59:59 - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'configure' must not be declared as void; change the method's return type or its annotation.
+Offending resource: class path resource [com/github/brunobuttros/userscore/config/SecutiryConfiguration.class]
+2024-06-05 19:59:59 - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2024-06-05 19:59:59 - Application run failed
+org.springframework.beans.factory.parsing.BeanDefinitionParsingException: Configuration problem: @Bean method 'configure' must not be declared as void; change the method's return type or its annotation.
+Offending resource: class path resource [com/github/brunobuttros/userscore/config/SecutiryConfiguration.class]
+	at org.springframework.beans.factory.parsing.FailFastProblemReporter.error(FailFastProblemReporter.java:72)
+	at org.springframework.context.annotation.BeanMethod.validate(BeanMethod.java:47)
+	at org.springframework.context.annotation.ConfigurationClass.validate(ConfigurationClass.java:219)
+	at org.springframework.context.annotation.ConfigurationClassParser.validate(ConfigurationClassParser.java:206)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:417)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:289)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:788)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:606)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:334)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1343)
+	at com.github.brunobuttros.userscore.ProjetoScoreApplication.main(ProjetoScoreApplication.java:12)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)

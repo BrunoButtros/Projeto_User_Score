@@ -20,13 +20,18 @@ import static org.springframework.security.config.http.SessionCreationPolicy.STA
 
 @Configuration
 @EnableWebSecurity
-public class SecutiryConfiguration {
+public class SecurityConfiguration {
 
     private static final String[] AUTH_WHITE_LIST = {
             "/swagger-ui/**",
             "/v3/api-docs/**",
             "/swagger-resources/**",
-            "/swagger-ui.html"
+            "/swagger-ui.html",
+            "/index",
+            "/index.jsp",
+            "/auth/login",
+            "/user/cadastrar",
+            "/user/scores"
     };
 
     @Autowired
@@ -45,7 +50,6 @@ public class SecutiryConfiguration {
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();
-
     }
 
     @Bean

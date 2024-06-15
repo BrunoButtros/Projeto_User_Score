@@ -1,0 +1,435 @@
+2024-06-10 22:31:02 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 20888 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-10 22:31:02 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-10 22:31:02 - No active profile set, falling back to 1 default profile: "default"
+2024-06-10 22:31:02 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-10 22:31:02 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-10 22:31:04 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-10 22:31:04 - Finished Spring Data repository scanning in 67 ms. Found 2 JPA repository interfaces.
+2024-06-10 22:31:04 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-10 22:31:04 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-10 22:31:04 - Tomcat initialized with port 8080 (http)
+2024-06-10 22:31:04 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-10 22:31:04 - Starting service [Tomcat]
+2024-06-10 22:31:04 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-10 22:31:04 - Initializing Spring embedded WebApplicationContext
+2024-06-10 22:31:04 - Root WebApplicationContext: initialization completed in 1993 ms
+2024-06-10 22:31:05 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-10 22:31:05 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-10 22:31:05 - HHH000026: Second-level cache disabled
+2024-06-10 22:31:05 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-10 22:31:05 - HikariPool-1 - Starting...
+2024-06-10 22:31:06 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5182808c
+2024-06-10 22:31:06 - HikariPool-1 - Start completed.
+2024-06-10 22:31:07 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-10 22:31:07 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10 22:31:07 - Filter 'securityFilter' configured for use
+2024-06-10 22:31:07 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-10 22:31:08 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6c9b0733, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@563054e4, org.springframework.security.web.context.SecurityContextHolderFilter@388f9028, org.springframework.security.web.header.HeaderWriterFilter@7bd83351, org.springframework.web.filter.CorsFilter@d331e1, org.springframework.security.web.authentication.logout.LogoutFilter@71f0f894, com.github.brunobuttros.userscore.service.SecurityFilter@1c2f3274, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2412b339, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@72455375, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@553e0ea8, org.springframework.security.web.session.SessionManagementFilter@6f315d73, org.springframework.security.web.access.ExceptionTranslationFilter@e6f09ce, org.springframework.security.web.access.intercept.AuthorizationFilter@7629871b]
+2024-06-10 22:31:08 - LiveReload server is running on port 35729
+2024-06-10 22:31:08 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-10 22:31:08 - Tomcat started on port 8080 (http) with context path ''
+2024-06-10 22:31:08 - Started ProjetoScoreApplication in 6.604 seconds (process running for 7.547)
+2024-06-10 22:31:08 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-10 22:31:08 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:31:08 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:31:08 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:31:08 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:31:09 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:31:09 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:31:09 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:31:09 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:31:09 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:31:09 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:31:09 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:31:09 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:32:31 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-10 22:32:31 - Initializing Servlet 'dispatcherServlet'
+2024-06-10 22:32:31 - Completed initialization in 32 ms
+2024-06-10 22:32:31 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+com.github.brunobuttros.userscore.exceptions.TokenValidationException: Error while validating token
+	at com.github.brunobuttros.userscore.service.TokenService.validateToken(TokenService.java:42)
+	at com.github.brunobuttros.userscore.service.SecurityFilter.doFilterInternal(SecurityFilter.java:35)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-10 22:32:39 - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+com.github.brunobuttros.userscore.exceptions.TokenValidationException: Error while validating token
+	at com.github.brunobuttros.userscore.service.TokenService.validateToken(TokenService.java:42)
+	at com.github.brunobuttros.userscore.service.SecurityFilter.doFilterInternal(SecurityFilter.java:35)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-10 22:32:42 - Carregando informações do usuário com nome de usuário: Logi4
+2024-06-10 22:32:42 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 where ue1_0.login=?
+2024-06-10 22:32:42 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:32:42 - Informações do usuário carregadas com sucesso.
+2024-06-10 22:32:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 where ue1_0.login=?
+2024-06-10 22:32:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:32:49 - Usuário autenticado
+2024-06-10 22:32:49 - Ocorreu uma exceção não tratada:
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource buscar.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at com.github.brunobuttros.userscore.service.SecurityFilter.doFilterInternal(SecurityFilter.java:44)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195)
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113)
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74)
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:391)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1744)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+2024-06-10 22:32:49 - Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource buscar.]
+2024-06-10 22:33:26 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 where ue1_0.login=?
+2024-06-10 22:33:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:33:26 - Usuário autenticado
+2024-06-10 22:33:26 - Buscando usuários com os parâmetros - id: null, nome: null, email: null, telefone: null, cpf: null
+2024-06-10 22:33:26 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-10 22:33:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:33:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:33:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:33:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:33:26 - Número de usuários encontrados: 4
+2024-06-10 22:33:49 - Iniciando cadastro de usuário com login: Login4
+2024-06-10 22:33:49 - select ue1_0.id from users ue1_0 where ue1_0.login=? limit ?
+2024-06-10 22:33:49 - select ue1_0.id from users ue1_0 where ue1_0.cpf=? limit ?
+2024-06-10 22:33:49 - Erro ao cadastrar usuário: Usuário com login ou CPF já existente.
+2024-06-10 22:33:49 - Resolved [com.github.brunobuttros.userscore.exceptions.LoginOuCPFJaExistenteException: Usuário com login ou CPF já existente.]
+2024-06-10 22:33:55 - Iniciando cadastro de usuário com login: Login5
+2024-06-10 22:33:55 - select ue1_0.id from users ue1_0 where ue1_0.login=? limit ?
+2024-06-10 22:33:55 - select ue1_0.id from users ue1_0 where ue1_0.cpf=? limit ?
+2024-06-10 22:33:55 - Erro ao cadastrar usuário: Usuário com login ou CPF já existente.
+2024-06-10 22:33:55 - Resolved [com.github.brunobuttros.userscore.exceptions.LoginOuCPFJaExistenteException: Usuário com login ou CPF já existente.]
+2024-06-10 22:34:00 - Iniciando cadastro de usuário com login: Login5
+2024-06-10 22:34:00 - select ue1_0.id from users ue1_0 where ue1_0.login=? limit ?
+2024-06-10 22:34:00 - select ue1_0.id from users ue1_0 where ue1_0.cpf=? limit ?
+2024-06-10 22:34:00 - Buscando endereço para o CEP: 17014270
+2024-06-10 22:34:02 - insert into adress (bairro,cep,localidade,logradouro,uf) values (?,?,?,?,?)
+2024-06-10 22:34:02 - insert into users (cep,cpf,email,endereco_id,login,nome,password,role,score,telefone) values (?,?,?,?,?,?,?,?,?,?)
+2024-06-10 22:39:29 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-10 22:39:29 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:39:29 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:39:29 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:39:29 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:39:29 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:39:29 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:39:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:39:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:39:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:39:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:39:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:39:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:39:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:39:30 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:39:30 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:47:50 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-10 22:47:50 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:47:50 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:47:50 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:47:50 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:47:50 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:47:50 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:47:50 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:47:50 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:47:50 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:47:50 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:47:50 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:47:50 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:47:50 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:47:50 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:47:50 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:56:10 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-10 22:56:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:56:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:56:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:56:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:56:10 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 22:56:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:56:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:56:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:56:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:56:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:56:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:56:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:56:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 22:56:11 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 22:56:11 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-10 23:04:31 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:04:31 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:04:31 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:04:31 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:04:31 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:04:31 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:04:31 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:09 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10 23:05:09 - HikariPool-1 - Shutdown initiated...
+2024-06-10 23:05:09 - HikariPool-1 - Shutdown completed.
+2024-06-10 23:05:13 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 13144 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-10 23:05:13 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-10 23:05:13 - No active profile set, falling back to 1 default profile: "default"
+2024-06-10 23:05:13 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-10 23:05:13 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-10 23:05:15 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-10 23:05:15 - Finished Spring Data repository scanning in 94 ms. Found 2 JPA repository interfaces.
+2024-06-10 23:05:16 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-10 23:05:16 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-10 23:05:16 - Tomcat initialized with port 8080 (http)
+2024-06-10 23:05:16 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-10 23:05:16 - Starting service [Tomcat]
+2024-06-10 23:05:16 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-10 23:05:16 - Initializing Spring embedded WebApplicationContext
+2024-06-10 23:05:16 - Root WebApplicationContext: initialization completed in 2941 ms
+2024-06-10 23:05:17 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-10 23:05:17 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-10 23:05:17 - HHH000026: Second-level cache disabled
+2024-06-10 23:05:17 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-10 23:05:17 - HikariPool-1 - Starting...
+2024-06-10 23:05:18 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5c08b335
+2024-06-10 23:05:18 - HikariPool-1 - Start completed.
+2024-06-10 23:05:19 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-10 23:05:19 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10 23:05:19 - Filter 'securityFilter' configured for use
+2024-06-10 23:05:20 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-10 23:05:20 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@682cf623, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68fad974, org.springframework.security.web.context.SecurityContextHolderFilter@1b38df6f, org.springframework.security.web.header.HeaderWriterFilter@7848ebb0, org.springframework.web.filter.CorsFilter@1898451f, org.springframework.security.web.authentication.logout.LogoutFilter@48402c8a, com.github.brunobuttros.userscore.service.SecurityFilter@6e85d302, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1251b0a9, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@16a6c078, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b4a0770, org.springframework.security.web.session.SessionManagementFilter@55c81979, org.springframework.security.web.access.ExceptionTranslationFilter@287437a, org.springframework.security.web.access.intercept.AuthorizationFilter@3ef7d436]
+2024-06-10 23:05:20 - LiveReload server is running on port 35729
+2024-06-10 23:05:20 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-10 23:05:21 - Tomcat started on port 8080 (http) with context path ''
+2024-06-10 23:05:21 - Started ProjetoScoreApplication in 8.096 seconds (process running for 9.027)
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-10 23:05:21 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:05:21 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:05:21 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:05:21 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:05:21 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:21 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-10 23:05:21 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-10 23:05:51 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10 23:05:51 - HikariPool-1 - Shutdown initiated...
+2024-06-10 23:05:51 - HikariPool-1 - Shutdown completed.

@@ -1,0 +1,182 @@
+2024-06-09 20:20:22 - Starting ProjetoScoreApplicationTests using Java 20.0.2 with PID 4980 (started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-09 20:20:22 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-09 20:20:22 - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 20:20:23 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 20:20:23 - Finished Spring Data repository scanning in 41 ms. Found 2 JPA repository interfaces.
+2024-06-09 20:20:23 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-09 20:20:23 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-09 20:20:23 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 20:20:23 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 20:20:23 - HHH000026: Second-level cache disabled
+2024-06-09 20:20:23 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 20:20:23 - HikariPool-1 - Starting...
+2024-06-09 20:20:24 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5dc1597f
+2024-06-09 20:20:24 - HikariPool-1 - Start completed.
+2024-06-09 20:20:25 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 20:20:25 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:20:26 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 20:20:26 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5f83b506, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@59294447, org.springframework.security.web.context.SecurityContextHolderFilter@7e168d90, org.springframework.security.web.header.HeaderWriterFilter@5f9d29c4, org.springframework.web.filter.CorsFilter@1377af49, org.springframework.security.web.authentication.logout.LogoutFilter@6d9069ab, com.github.brunobuttros.userscore.service.SecurityFilter@2787abe4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6a53cddc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1e7245da, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1b3639a1, org.springframework.security.web.session.SessionManagementFilter@73602e88, org.springframework.security.web.access.ExceptionTranslationFilter@796eeafb, org.springframework.security.web.access.intercept.AuthorizationFilter@7ddf7e77]
+2024-06-09 20:20:26 - Started ProjetoScoreApplicationTests in 4.821 seconds (process running for 6.951)
+2024-06-09 20:20:26 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-09 20:20:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:20:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:20:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:20:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:20:26 - Unexpected error occurred in scheduled task
+com.github.brunobuttros.userscore.exceptions.ScoreApiException: Erro ao chamar a API de pontuação: I/O error on POST request for "http://localhost:8081/score": Connection refused: connect
+	at com.github.brunobuttros.userscore.service.ScoreApiClient.getScore(ScoreApiClient.java:48)
+	at com.github.brunobuttros.userscore.service.FileService.atualizarArquivoUsuariosPeriodicamente(FileService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2024-06-09 20:20:26 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:20:26 - HikariPool-1 - Shutdown initiated...
+2024-06-09 20:20:26 - HikariPool-1 - Shutdown completed.
+2024-06-09 20:22:37 - Starting ProjetoScoreApplicationTests using Java 20.0.2 with PID 6624 (started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-09 20:22:37 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-09 20:22:37 - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 20:22:38 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 20:22:38 - Finished Spring Data repository scanning in 52 ms. Found 2 JPA repository interfaces.
+2024-06-09 20:22:38 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-09 20:22:38 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-09 20:22:39 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 20:22:39 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 20:22:39 - HHH000026: Second-level cache disabled
+2024-06-09 20:22:39 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 20:22:39 - HikariPool-1 - Starting...
+2024-06-09 20:22:39 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e3566e
+2024-06-09 20:22:39 - HikariPool-1 - Start completed.
+2024-06-09 20:22:40 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 20:22:40 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:22:41 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 20:22:41 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6f78c132, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2a4bee4e, org.springframework.security.web.context.SecurityContextHolderFilter@12d24c43, org.springframework.security.web.header.HeaderWriterFilter@6b0636d9, org.springframework.web.filter.CorsFilter@7127f04b, org.springframework.security.web.authentication.logout.LogoutFilter@50508ed3, com.github.brunobuttros.userscore.service.SecurityFilter@590ab84, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4a66949a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57e83608, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6ba19932, org.springframework.security.web.session.SessionManagementFilter@68823b6b, org.springframework.security.web.access.ExceptionTranslationFilter@2926144f, org.springframework.security.web.access.intercept.AuthorizationFilter@4290fcd7]
+2024-06-09 20:22:41 - Started ProjetoScoreApplicationTests in 4.294 seconds (process running for 5.31)
+2024-06-09 20:22:41 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-09 20:22:41 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:22:41 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:22:41 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:22:41 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:22:41 - Unexpected error occurred in scheduled task
+com.github.brunobuttros.userscore.exceptions.ScoreApiException: Erro ao chamar a API de pontuação: I/O error on POST request for "http://localhost:8081/score": Connection refused: connect
+	at com.github.brunobuttros.userscore.service.ScoreApiClient.getScore(ScoreApiClient.java:48)
+	at com.github.brunobuttros.userscore.service.FileService.atualizarArquivoUsuariosPeriodicamente(FileService.java:56)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:499)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:577)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1623)
+2024-06-09 20:22:41 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:22:41 - HikariPool-1 - Shutdown initiated...
+2024-06-09 20:22:41 - HikariPool-1 - Shutdown completed.
+2024-06-09 20:33:42 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 1544 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-09 20:33:42 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-09 20:33:42 - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 20:33:42 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-09 20:33:42 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-09 20:33:43 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 20:33:43 - Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
+2024-06-09 20:33:43 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-09 20:33:44 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-09 20:33:46 - Tomcat initialized with port 8080 (http)
+2024-06-09 20:33:46 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-09 20:33:46 - Starting service [Tomcat]
+2024-06-09 20:33:46 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-09 20:33:46 - Initializing Spring embedded WebApplicationContext
+2024-06-09 20:33:46 - Root WebApplicationContext: initialization completed in 3443 ms
+2024-06-09 20:33:46 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 20:33:46 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 20:33:46 - HHH000026: Second-level cache disabled
+2024-06-09 20:33:46 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 20:33:46 - HikariPool-1 - Starting...
+2024-06-09 20:33:47 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1b197bc2
+2024-06-09 20:33:47 - HikariPool-1 - Start completed.
+2024-06-09 20:33:47 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 20:33:47 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:33:48 - Filter 'securityFilter' configured for use
+2024-06-09 20:33:48 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 20:33:48 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@71f0f894, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7b91442d, org.springframework.security.web.context.SecurityContextHolderFilter@e6f09ce, org.springframework.security.web.header.HeaderWriterFilter@520f720c, org.springframework.web.filter.CorsFilter@9ccb8de, org.springframework.security.web.authentication.logout.LogoutFilter@34e9204c, com.github.brunobuttros.userscore.service.SecurityFilter@739b1a66, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bd83351, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7cf3c8bc, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@da1af2a, org.springframework.security.web.session.SessionManagementFilter@54169f1f, org.springframework.security.web.access.ExceptionTranslationFilter@38353262, org.springframework.security.web.access.intercept.AuthorizationFilter@7a1b94e]
+2024-06-09 20:33:48 - LiveReload server is running on port 35729
+2024-06-09 20:33:48 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-09 20:33:48 - Tomcat started on port 8080 (http) with context path ''
+2024-06-09 20:33:48 - Started ProjetoScoreApplication in 6.773 seconds (process running for 7.29)
+2024-06-09 20:33:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-09 20:33:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:33:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:33:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:33:49 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:33:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:33:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:33:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:33:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:33:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:33:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:33:49 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:33:49 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:38:14 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:38:14 - HikariPool-1 - Shutdown initiated...
+2024-06-09 20:38:14 - HikariPool-1 - Shutdown completed.
+2024-06-09 20:38:17 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 6004 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-09 20:38:17 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-09 20:38:17 - No active profile set, falling back to 1 default profile: "default"
+2024-06-09 20:38:17 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-09 20:38:17 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-09 20:38:18 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-09 20:38:18 - Finished Spring Data repository scanning in 71 ms. Found 2 JPA repository interfaces.
+2024-06-09 20:38:19 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-09 20:38:19 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-09 20:38:19 - Tomcat initialized with port 8080 (http)
+2024-06-09 20:38:19 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-09 20:38:19 - Starting service [Tomcat]
+2024-06-09 20:38:19 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-09 20:38:19 - Initializing Spring embedded WebApplicationContext
+2024-06-09 20:38:19 - Root WebApplicationContext: initialization completed in 2273 ms
+2024-06-09 20:38:19 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-09 20:38:20 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-09 20:38:20 - HHH000026: Second-level cache disabled
+2024-06-09 20:38:20 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-09 20:38:20 - HikariPool-1 - Starting...
+2024-06-09 20:38:20 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1866f383
+2024-06-09 20:38:20 - HikariPool-1 - Start completed.
+2024-06-09 20:38:21 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-09 20:38:21 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:38:22 - Filter 'securityFilter' configured for use
+2024-06-09 20:38:22 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-09 20:38:23 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2ad6008b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5320d494, org.springframework.security.web.context.SecurityContextHolderFilter@79df4c91, org.springframework.security.web.header.HeaderWriterFilter@2d21bcfa, org.springframework.web.filter.CorsFilter@7d7f322e, org.springframework.security.web.authentication.logout.LogoutFilter@5bfdec97, com.github.brunobuttros.userscore.service.SecurityFilter@5113fc7e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6f6d3871, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@563debd1, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1eb6dd, org.springframework.security.web.session.SessionManagementFilter@d781fb1, org.springframework.security.web.access.ExceptionTranslationFilter@1f51e311, org.springframework.security.web.access.intercept.AuthorizationFilter@13f160b]
+2024-06-09 20:38:24 - LiveReload server is running on port 35729
+2024-06-09 20:38:24 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-09 20:38:24 - Tomcat started on port 8080 (http) with context path ''
+2024-06-09 20:38:24 - Started ProjetoScoreApplication in 7.366 seconds (process running for 8.091)
+2024-06-09 20:38:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-09 20:38:24 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:38:24 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:38:24 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:38:24 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-09 20:38:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:38:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:38:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:38:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:38:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:38:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:38:24 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-09 20:38:24 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-09 20:41:40 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-09 20:41:41 - HikariPool-1 - Shutdown initiated...
+2024-06-09 20:41:41 - HikariPool-1 - Shutdown completed.

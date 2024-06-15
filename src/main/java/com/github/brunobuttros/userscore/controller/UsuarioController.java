@@ -1,6 +1,7 @@
 package com.github.brunobuttros.userscore.controller;
 
 import com.github.brunobuttros.userscore.dto.CadastrarDTO;
+import com.github.brunobuttros.userscore.dto.UserListDTO;
 import com.github.brunobuttros.userscore.dto.UserScoreDTO;
 import com.github.brunobuttros.userscore.dto.UsuarioDTO;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
@@ -76,4 +77,11 @@ public class UsuarioController {
         UserScoreDTO userScoreDTO = usuarioService.getUserScoreById(id);
         return ResponseEntity.ok(userScoreDTO);
     }
+
+    @GetMapping("/scores")
+    public ResponseEntity<List<UserListDTO>> listarNomesEScores() {
+        List<UserListDTO> userScores = usuarioService.getAllUserScores();
+        return ResponseEntity.ok(userScores);
+    }
+
 }

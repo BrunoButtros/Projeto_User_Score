@@ -1,9 +1,6 @@
 package com.github.brunobuttros.userscore.service;
 
-import com.github.brunobuttros.userscore.dto.CadastrarDTO;
-import com.github.brunobuttros.userscore.dto.EnderecoDTO;
-import com.github.brunobuttros.userscore.dto.UserScoreDTO;
-import com.github.brunobuttros.userscore.dto.UsuarioDTO;
+import com.github.brunobuttros.userscore.dto.*;
 import com.github.brunobuttros.userscore.entity.EnderecoEntity;
 import com.github.brunobuttros.userscore.entity.UsuarioEntity;
 import com.github.brunobuttros.userscore.exceptions.LoginOuCPFJaExistenteException;
@@ -152,5 +149,11 @@ public class UsuarioService {
                 enderecoEntity.getLocalidade(),
                 enderecoEntity.getUf()
         );
+    }
+    public List<UserListDTO> getAllUserScores() {
+        List<UsuarioEntity> usuarios = usuarioRepository.findAll();
+        return usuarios.stream()
+                .map(usuario -> new UserListDTO(usuario.getNome(), usuario.getScore()))
+                .collect(Collectors.toList());
     }
 }

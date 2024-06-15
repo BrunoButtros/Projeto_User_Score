@@ -19,12 +19,14 @@ public class TokenService {
     @Value("${api.security.token.secret}")
     private String secret;
 
-
     public String generateToken(UsuarioEntity usuarioEntity) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
-            String token = JWT.create().withIssuer("token-api").withSubject(usuarioEntity.getLogin()).withExpiresAt(genExperationateDate()).sign(algorithm);
-            return token;
+            return JWT.create()
+                    .withIssuer("token-api")
+                    .withSubject(usuarioEntity.getLogin())
+                    .withExpiresAt(genExperationDate())
+                    .sign(algorithm);
         } catch (JWTCreationException exception) {
             throw new TokenGenerationException("Error while generating token", exception);
         }
@@ -43,8 +45,7 @@ public class TokenService {
         }
     }
 
-    private Instant genExperationateDate() {
+    private Instant genExperationDate() {
         return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
     }
-
 }
