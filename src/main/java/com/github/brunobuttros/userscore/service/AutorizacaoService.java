@@ -25,5 +25,4 @@ public class AutorizacaoService implements UserDetailsService {
         }
         logger.info("Informações do usuário carregadas com sucesso.");
         return userDetails;
-    }
-}
+    }}

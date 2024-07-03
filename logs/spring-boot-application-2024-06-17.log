@@ -1,0 +1,69 @@
+2024-06-17 10:59:08 - Starting ProjetoScoreApplication using Java 21.0.2 with PID 7916 (C:\Users\bruno\Desktop\user-score\target\classes started by bruno in C:\Users\bruno\Desktop\user-score)
+2024-06-17 10:59:09 - Running with Spring Boot v3.2.4, Spring v6.1.5
+2024-06-17 10:59:09 - No active profile set, falling back to 1 default profile: "default"
+2024-06-17 10:59:09 - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-06-17 10:59:09 - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-06-17 10:59:10 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-17 10:59:10 - Finished Spring Data repository scanning in 122 ms. Found 2 JPA repository interfaces.
+2024-06-17 10:59:11 - Bean 'org.springframework.ws.config.annotation.DelegatingWsConfiguration' of type [org.springframework.ws.config.annotation.DelegatingWsConfiguration$$SpringCGLIB$$0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [annotationActionEndpointMapping] is declared through a non-static factory method on that class; consider declaring it as static instead.
+2024-06-17 10:59:11 - Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2024-06-17 10:59:12 - Tomcat initialized with port 8080 (http)
+2024-06-17 10:59:12 - Initializing ProtocolHandler ["http-nio-8080"]
+2024-06-17 10:59:12 - Starting service [Tomcat]
+2024-06-17 10:59:12 - Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-06-17 10:59:12 - Initializing Spring embedded WebApplicationContext
+2024-06-17 10:59:12 - Root WebApplicationContext: initialization completed in 2980 ms
+2024-06-17 10:59:12 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-17 10:59:12 - HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-06-17 10:59:12 - HHH000026: Second-level cache disabled
+2024-06-17 10:59:12 - No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-17 10:59:12 - HikariPool-1 - Starting...
+2024-06-17 10:59:13 - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@35132f19
+2024-06-17 10:59:13 - HikariPool-1 - Start completed.
+2024-06-17 10:59:14 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-17 10:59:14 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-17 10:59:15 - Filter 'securityFilter' configured for use
+2024-06-17 10:59:15 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-17 10:59:16 - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@5d4fb67e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@51749576, org.springframework.security.web.context.SecurityContextHolderFilter@ee6312b, org.springframework.security.web.header.HeaderWriterFilter@5828ded5, org.springframework.web.filter.CorsFilter@48774c7b, org.springframework.security.web.authentication.logout.LogoutFilter@418a065, com.github.brunobuttros.userscore.service.SecurityFilter@5b6a1e86, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@26ee817f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5e75424d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7677eb4, org.springframework.security.web.session.SessionManagementFilter@aa4e65b, org.springframework.security.web.access.ExceptionTranslationFilter@20649a7c, org.springframework.security.web.access.intercept.AuthorizationFilter@5fca7fae]
+2024-06-17 10:59:16 - LiveReload server is running on port 35729
+2024-06-17 10:59:16 - Starting ProtocolHandler ["http-nio-8080"]
+2024-06-17 10:59:16 - Tomcat started on port 8080 (http) with context path ''
+2024-06-17 10:59:16 - Started ProjetoScoreApplication in 8.543 seconds (process running for 9.464)
+2024-06-17 10:59:16 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-17 10:59:16 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 10:59:16 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 10:59:16 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 10:59:16 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 10:59:16 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 10:59:17 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,e1_0.id,e1_0.bairro,e1_0.cep,e1_0.localidade,e1_0.logradouro,e1_0.uf,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 left join adress e1_0 on e1_0.id=ue1_0.endereco_id where ue1_0.id=?
+2024-06-17 10:59:17 - update users set cep=?,cpf=?,email=?,endereco_id=?,login=?,nome=?,password=?,role=?,score=?,telefone=? where id=?
+2024-06-17 11:04:25 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-17 11:04:25 - Initializing Servlet 'dispatcherServlet'
+2024-06-17 11:04:25 - Completed initialization in 95 ms
+2024-06-17 11:04:25 - Carregando informações do usuário com nome de usuário: Logi4
+2024-06-17 11:04:25 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0 where ue1_0.login=?
+2024-06-17 11:04:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 11:04:26 - Informações do usuário carregadas com sucesso.
+2024-06-17 11:04:26 - select ue1_0.id,ue1_0.cep,ue1_0.cpf,ue1_0.email,ue1_0.endereco_id,ue1_0.login,ue1_0.nome,ue1_0.password,ue1_0.role,ue1_0.score,ue1_0.telefone from users ue1_0
+2024-06-17 11:04:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 11:04:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 11:04:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 11:04:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 11:04:26 - select ee1_0.id,ee1_0.bairro,ee1_0.cep,ee1_0.localidade,ee1_0.logradouro,ee1_0.uf from adress ee1_0 where ee1_0.id=?
+2024-06-17 11:07:24 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-17 11:07:24 - HikariPool-1 - Shutdown initiated...
+2024-06-17 11:07:24 - HikariPool-1 - Shutdown completed.

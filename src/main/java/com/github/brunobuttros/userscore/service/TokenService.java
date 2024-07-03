@@ -31,7 +31,6 @@ public class TokenService {
             throw new TokenGenerationException("Error while generating token", exception);
         }
     }
-
     public String validateToken(String token) {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);

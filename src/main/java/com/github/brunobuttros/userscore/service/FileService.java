@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,9 +27,11 @@ public class FileService {
     private final ScoreApiClient scoreApiClient;
     private final EmailService emailService;
 
+    @Value("${app.file.path}")
+    private String filePath;
+
     @Value("${feature.envia.email}")
     private boolean flagMail;
-
 
     public FileService(UsuarioRepository usuarioRepository, UsuarioService usuarioService, ScoreApiClient scoreApiClient, EmailService emailService) {
         this.usuarioRepository = usuarioRepository;
@@ -35,20 +40,28 @@ public class FileService {
     }
 
     public void criarArquivoUsuario(List<UsuarioDTO> usuarios) {
-        String nomeArquivo = "usuarios_scores.txt";
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nomeArquivo))) {
-            for (UsuarioDTO usuario : usuarios) {
-                writer.write("ID: " + usuario.id() + ", score atual: " + usuario.score());
-                writer.newLine();
+        Path filePathPath = Paths.get(filePath);
+        Path directoryPath = filePathPath.getParent(); // Obtém o diretório do arquivo
+
+        try {
+            // Cria o diretório se não existir
+            if (Files.notExists(directoryPath)) {
+                Files.createDirectories(directoryPath);
+            }
+
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePathPath.toFile()))) {
+                for (UsuarioDTO usuario : usuarios) {
+                    writer.write("ID: " + usuario.id() + ", score atual: " + usuario.score());
+                    writer.newLine();
+                }
             }
         } catch (IOException e) {
-            throw new FileCreationException("Falha ao criar o arquivo '" + nomeArquivo + "'", e);
+            throw new FileCreationException("Falha ao criar o arquivo '" + filePath + "'", e);
         }
     }
 
     @Scheduled(fixedDelay = 500000)
     public void atualizarArquivoUsuariosPeriodicamente() {
-        String nomeArquivo = "usuarios_scores.txt";
         List<UsuarioDTO> usuarios = new ArrayList<>();
         List<UsuarioEntity> usuariosFromRepository = usuarioRepository.findAll();
 
@@ -71,8 +84,7 @@ public class FileService {
         criarArquivoUsuario(usuarios);
 
         if (flagMail) {
-            String caminhoDoDocumento = "C:\\Users\\bruno\\Desktop\\user-score\\usuarios_scores.txt";
-            emailService.enviarDocumentoParaAdmins(caminhoDoDocumento);
+            emailService.enviarDocumentoParaAdmins(filePath);
         }
     }
 }

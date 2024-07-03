@@ -30,8 +30,7 @@ public class SecurityConfiguration {
             "/index",
             "/index.jsp",
             "/auth/login",
-            "/user/cadastrar",
-            "/user/scores"
+
     };
 
     @Autowired
@@ -47,6 +46,7 @@ public class SecurityConfiguration {
                         .requestMatchers(POST, "/user/cadastrar").permitAll()
                         .requestMatchers(DELETE, "/user").hasRole("ADMIN")
                         .requestMatchers(AUTH_WHITE_LIST).permitAll()
+
                         .anyRequest().authenticated())
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)
                 .build();

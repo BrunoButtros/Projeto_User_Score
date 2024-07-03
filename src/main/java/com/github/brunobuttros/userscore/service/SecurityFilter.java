@@ -1,5 +1,6 @@
 package com.github.brunobuttros.userscore.service;
 
+import com.github.brunobuttros.userscore.exceptions.TokenValidationException;
 import com.github.brunobuttros.userscore.repository.UsuarioRepository;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -27,19 +28,21 @@ public class SecurityFilter extends OncePerRequestFilter {
 
 
     @Override
-    protected void doFilterInternal
-            (HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         var token = this.recoverToken(request);
         if (token != null) {
-            var login = tokenService.validateToken(token);
-            UserDetails user = usuarioRepository.findByLogin(login);
-            var authentication = new UsernamePasswordAuthenticationToken
-                    (user, null, user.getAuthorities());
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-            logger.info("Usuário autenticado", login);
-
-
+            try {
+                var login = tokenService.validateToken(token);
+                UserDetails user = usuarioRepository.findByLogin(login);
+                var authentication = new UsernamePasswordAuthenticationToken(user, null, user.getAuthorities());
+                SecurityContextHolder.getContext().setAuthentication(authentication);
+                logger.info("Usuário autenticado: {}", login);
+            } catch (TokenValidationException e) {
+                logger.error("Erro ao validar token: {}", e.getMessage());
+                response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Token inválido ou expirado");
+                return;
+            }
         }
         filterChain.doFilter(request, response);
     }
