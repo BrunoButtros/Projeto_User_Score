@@ -1,0 +1,24 @@
+services:
+  userscore:
+    image: "user-score"
+    container_name: userscore
+    ports:
+      - "8080:8080"
+    networks:
+      - score_network
+    environment:
+      USER_SCORE_JDBC_URL: "jdbc:mysql://mysql:3306/userscore?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true"
+      MYSQL_USERNAME: root
+      MYSQL_PASSWORD: root
+      VIACEP_URL: https://viacep.com.br/ws/
+      SCORE_API_URL: http://score-server:8081/score
+      MAIL_HOST_HOTMAIL: smtp.office365.com
+      MAIL_PORT: 587
+      TOKEN_MAIL_USERNAME: ${TOKEN_MAIL_USERNAME}
+      TOKEN_MAIL_PASSWORD: ${TOKEN_MAIL_PASSWORD}
+      ENVIAR_EMAIL: true
+      APP_FILE_PATH: /app/usuarios_scores.txt
+
+networks:
+  score_network:
+    external: true
